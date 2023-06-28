@@ -34,3 +34,15 @@ Se propone un algoritmo de planificación basado en planes con optimización de 
 Correr el ambiente con todo instalado utilizando nix:
 
 ``` nix-shell shell.nix```
+
+Esto spawnea una shell con el entorno de Nix.
+
+### Robin
+
+Dado que tenemos todas las herramientas necesarias, podemos correr los comandos de Batsim y el scheduler utilizando Robin. De cierta manera, automatiza el proceso:
+
+
+``` 
+    # Dentro del nix-shell (ejecutando el comando anterior)
+    robin sched_sim.yaml
+```
