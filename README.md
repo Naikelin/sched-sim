@@ -23,9 +23,7 @@ El problema que se aborda en el documento es que los sistemas de gestión de rec
 
 La función objetivo del algoritmo de programación propuesto es minimizar la suma de los tiempos de espera de los trabajos ponderados por un exponente. Para una permutación P, WPj denota el tiempo de espera del j-ésimo trabajo en Q según el plan de ejecución creado en base a P. La fórmula es la siguiente:
 
-$
-\min \sum_{j \in Q} (WP_j)^{\beta}
-$
+$\min \sum_{j \in Q} (WP_j)^{\beta}$
 
 Donde β es un parámetro del algoritmo.
 
