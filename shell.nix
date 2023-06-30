@@ -15,6 +15,9 @@ let
         kapack.pybatsim
         kapack.batexpe
       ];
+      shellHook = ''
+        export PYTHONPATH=$PYTHONPATH:${kapack.pybatsim}/lib/python3.10/site-packages
+      '';
     };
   };
 in

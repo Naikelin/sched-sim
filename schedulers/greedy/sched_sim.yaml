@@ -1,0 +1,7 @@
+batcmd: batsim -p platforms/cluster512.xml -w workloads/hpc_seed_jobs250.json -e output/greedy
+failure-timeout: 5
+output-dir: output/greedy
+ready-timeout: 10
+schedcmd: pybatsim schedulers/greedy/greedy_sched.py
+simulation-timeout: 604800
+success-timeout: 3600
