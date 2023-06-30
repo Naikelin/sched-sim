@@ -1,11 +1,4 @@
-FROM ubuntu:latest
+FROM ghcr.io/xtruder/nix-devcontainer:v1
 
-# Instala curl y bzip2
-RUN apt-get update -y && \
-    apt-get install -y curl bzip2
-
-# Instala Nix
-RUN curl -L https://nixos.org/nix/install | sh
-
-# Agrega nix a tu path
-ENV PATH="/root/.nix-profile/bin:${PATH}"
+# cache /nix
+VOLUME /nix
