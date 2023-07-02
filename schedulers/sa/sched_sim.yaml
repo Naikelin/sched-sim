@@ -1,0 +1,7 @@
+batcmd: batsim -p platforms/cluster512.xml -w workloads/hpc_seed_jobs250.json -e output/sa -q
+failure-timeout: 5
+output-dir: output/aco
+ready-timeout: 10
+schedcmd: pybatsim schedulers/sa/sa.py -v warning
+simulation-timeout: 604800
+success-timeout: 3600
