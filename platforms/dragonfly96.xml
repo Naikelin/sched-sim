@@ -1,0 +1,23 @@
+<?xml version='1.0'?>
+<!DOCTYPE platform SYSTEM "https://simgrid.org/simgrid.dtd">
+<platform version="4.1">
+  <zone id="world" routing="Full">
+
+    <cluster id="bob_cluster"
+	     prefix="node-" radical="0-15" suffix=".simgrid.org"
+	     speed="1Gf" bw="125MBps" lat="50us"
+             topology="FAT_TREE" topo_parameters="2;4,4;1,2;1,2"
+	     loopback_bw="100MBps" loopback_lat="0" />
+
+    <host id="master" speed="1Gf">
+        <prop id="role" value="master"/>
+    </host>
+    
+    <link id="link_master_cluster" bandwidth="125MBps" latency="50us" />
+    
+    <route src="master" dst="node-0.simgrid.org">
+        <link_ctn id="link_master_cluster"/>
+    </route>
+
+  </zone>
+</platform>

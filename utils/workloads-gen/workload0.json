@@ -1,0 +1,1203 @@
+{
+    "command": "Generated in Jupyter Notebook",
+    "date": "2023-09-11T00:10:42",
+    "description": "this workload had been automatically generated",
+    "profiles_description": "Randomly generated profiles",
+    "profiles": {
+        "low_1": {
+            "type": "parallel_homogeneous",
+            "cpu": 482847935.09004843,
+            "com": 873098.0407308955
+        },
+        "low_2": {
+            "type": "parallel_homogeneous",
+            "cpu": 752621437.7177421,
+            "com": 243054.0506395114
+        },
+        "low_3": {
+            "type": "parallel_homogeneous",
+            "cpu": 574031584.4126145,
+            "com": 591655.2061692629
+        },
+        "low_4": {
+            "type": "parallel_homogeneous",
+            "cpu": 704084809.5290525,
+            "com": 670974.0284040893
+        },
+        "low_5": {
+            "type": "parallel_homogeneous",
+            "cpu": 697588858.568308,
+            "com": 579415.5319900775
+        },
+        "low_6": {
+            "type": "parallel_homogeneous",
+            "cpu": 721643983.8424762,
+            "com": 692029.2292447803
+        },
+        "low_7": {
+            "type": "parallel_homogeneous",
+            "cpu": 46162513.83942675,
+            "com": 179734.05421519472
+        },
+        "low_8": {
+            "type": "parallel_homogeneous",
+            "cpu": 169551905.88853052,
+            "com": 414911.2372585809
+        },
+        "low_9": {
+            "type": "parallel_homogeneous",
+            "cpu": 680323495.7040412,
+            "com": 562670.4195995287
+        },
+        "low_10": {
+            "type": "parallel_homogeneous",
+            "cpu": 248142359.70150816,
+            "com": 717361.1607575042
+        },
+        "low_11": {
+            "type": "parallel_homogeneous",
+            "cpu": 589560725.1762213,
+            "com": 830296.7564398535
+        },
+        "low_12": {
+            "type": "parallel_homogeneous",
+            "cpu": 40505051.38611828,
+            "com": 704274.3982668961
+        },
+        "low_13": {
+            "type": "parallel_homogeneous",
+            "cpu": 959032969.13446,
+            "com": 17904.65473308329
+        },
+        "low_14": {
+            "type": "parallel_homogeneous",
+            "cpu": 830785497.4143556,
+            "com": 200461.65466961416
+        },
+        "low_15": {
+            "type": "parallel_homogeneous",
+            "cpu": 252366038.68466172,
+            "com": 140415.0326898845
+        },
+        "med_16": {
+            "type": "parallel_homogeneous",
+            "cpu": 662205142.1841953,
+            "com": 181696868326.33694
+        },
+        "med_17": {
+            "type": "parallel_homogeneous",
+            "cpu": 1431330667665.4949,
+            "com": 304143.3762441119
+        },
+        "med_18": {
+            "type": "parallel_homogeneous",
+            "cpu": 1932771047938.894,
+            "com": 395135.3401981972
+        },
+        "med_19": {
+            "type": "parallel_homogeneous",
+            "cpu": 842222126.8073951,
+            "com": 889303711926.1503
+        },
+        "med_20": {
+            "type": "parallel_homogeneous",
+            "cpu": 1245696758025.352,
+            "com": 246837.52674810696
+        },
+        "med_21": {
+            "type": "parallel_homogeneous",
+            "cpu": 207377940.39286658,
+            "com": 601733758893.7853
+        },
+        "med_22": {
+            "type": "parallel_homogeneous",
+            "cpu": 1077602917476.4049,
+            "com": 80843.62537032181
+        },
+        "med_23": {
+            "type": "parallel_homogeneous",
+            "cpu": 1658270631695.0266,
+            "com": 196672.49515871328
+        },
+        "med_24": {
+            "type": "parallel_homogeneous",
+            "cpu": 1620098379543.7017,
+            "com": 607678.3909180486
+        },
+        "med_25": {
+            "type": "parallel_homogeneous",
+            "cpu": 1583533705061.7466,
+            "com": 743611.7219189014
+        },
+        "med_26": {
+            "type": "parallel_homogeneous",
+            "cpu": 1987611967275.9507,
+            "com": 161024.67589334617
+        },
+        "med_27": {
+            "type": "parallel_homogeneous",
+            "cpu": 974083463.2108225,
+            "com": 342036465845.764
+        },
+        "med_28": {
+            "type": "parallel_homogeneous",
+            "cpu": 1406201404153.6936,
+            "com": 751162.7233344347
+        },
+        "med_29": {
+            "type": "parallel_homogeneous",
+            "cpu": 1362476515068.7847,
+            "com": 6469.750329900111
+        },
+        "med_30": {
+            "type": "parallel_homogeneous",
+            "cpu": 738394204.1823064,
+            "com": 480446856162.5466
+        },
+        "med_31": {
+            "type": "parallel_homogeneous",
+            "cpu": 782980850.0631632,
+            "com": 643094988342.0352
+        },
+        "med_32": {
+            "type": "parallel_homogeneous",
+            "cpu": 44654063.0234941,
+            "com": 850861222378.551
+        },
+        "med_33": {
+            "type": "parallel_homogeneous",
+            "cpu": 1601071038933.1694,
+            "com": 805824.5747771207
+        },
+        "med_34": {
+            "type": "parallel_homogeneous",
+            "cpu": 1317934404850.591,
+            "com": 901597.655787851
+        },
+        "med_35": {
+            "type": "parallel_homogeneous",
+            "cpu": 1228342148613.6057,
+            "com": 902141.5797978241
+        },
+        "high_36": {
+            "type": "parallel_homogeneous",
+            "cpu": 1597104060371.1765,
+            "com": 920435782623.2096
+        },
+        "high_37": {
+            "type": "parallel_homogeneous",
+            "cpu": 1594315546924.0542,
+            "com": 553264471716.5072
+        },
+        "high_38": {
+            "type": "parallel_homogeneous",
+            "cpu": 1999002404588.359,
+            "com": 76043959594.99973
+        },
+        "high_39": {
+            "type": "parallel_homogeneous",
+            "cpu": 1951106867070.7231,
+            "com": 607895182096.6387
+        },
+        "high_40": {
+            "type": "parallel_homogeneous",
+            "cpu": 1878101884231.0205,
+            "com": 444130835727.9948
+        },
+        "high_41": {
+            "type": "parallel_homogeneous",
+            "cpu": 1725158501553.5688,
+            "com": 916349299835.7906
+        },
+        "high_42": {
+            "type": "parallel_homogeneous",
+            "cpu": 1701866320941.2612,
+            "com": 1612561767.8883648
+        },
+        "high_43": {
+            "type": "parallel_homogeneous",
+            "cpu": 1191935539607.07,
+            "com": 345985406710.5517
+        },
+        "high_44": {
+            "type": "parallel_homogeneous",
+            "cpu": 1081765929207.222,
+            "com": 981033165583.1022
+        },
+        "high_45": {
+            "type": "parallel_homogeneous",
+            "cpu": 1769136712386.3506,
+            "com": 765532279716.2349
+        },
+        "high_46": {
+            "type": "parallel_homogeneous",
+            "cpu": 1238153073490.62,
+            "com": 946942862936.6655
+        },
+        "high_47": {
+            "type": "parallel_homogeneous",
+            "cpu": 1092900715716.8429,
+            "com": 642730135325.4474
+        },
+        "high_48": {
+            "type": "parallel_homogeneous",
+            "cpu": 1554549576546.148,
+            "com": 72341980317.9184
+        },
+        "high_49": {
+            "type": "parallel_homogeneous",
+            "cpu": 1460311439017.424,
+            "com": 538741353000.5281
+        },
+        "high_50": {
+            "type": "parallel_homogeneous",
+            "cpu": 1656075813230.0498,
+            "com": 392175252452.2897
+        }
+    },
+    "nb_res": 1,
+    "jobs": [
+        {
+            "id": 0,
+            "profile": "med_19",
+            "res": 1,
+            "subtime": 5.3243236161935075,
+            "walltime": 583.2824513121185
+        },
+        {
+            "id": 1,
+            "profile": "low_7",
+            "res": 1,
+            "subtime": 5.3243236161935075,
+            "walltime": 195.31113330071352,
+            "dependencies": [
+                0
+            ]
+        },
+        {
+            "id": 2,
+            "profile": "med_24",
+            "res": 1,
+            "subtime": 5.3243236161935075,
+            "walltime": 94.43096175875611,
+            "dependencies": [
+                1
+            ]
+        },
+        {
+            "id": 3,
+            "profile": "high_37",
+            "res": 1,
+            "subtime": 3.794997280515167,
+            "walltime": 430.06677090615324
+        },
+        {
+            "id": 4,
+            "profile": "low_9",
+            "res": 1,
+            "subtime": 3.053189001147068,
+            "walltime": 160.0191034561827
+        },
+        {
+            "id": 5,
+            "profile": "low_10",
+            "res": 1,
+            "subtime": 3.053189001147068,
+            "walltime": 237.78722280893348,
+            "dependencies": [
+                4
+            ]
+        },
+        {
+            "id": 6,
+            "profile": "low_12",
+            "res": 1,
+            "subtime": 5.3243236161935075,
+            "walltime": 259.7429781220508,
+            "dependencies": [
+                1,
+                2,
+                3,
+                4
+            ]
+        },
+        {
+            "id": 7,
+            "profile": "med_25",
+            "res": 1,
+            "subtime": 8.371033702919851,
+            "walltime": 302.72494691536457
+        },
+        {
+            "id": 8,
+            "profile": "high_38",
+            "res": 1,
+            "subtime": 19.262633229411023,
+            "walltime": 318.17667057744274
+        },
+        {
+            "id": 9,
+            "profile": "low_4",
+            "res": 1,
+            "subtime": 17.70672704562647,
+            "walltime": 514.215195786072
+        },
+        {
+            "id": 10,
+            "profile": "low_6",
+            "res": 1,
+            "subtime": 17.70672704562647,
+            "walltime": 24.866774557327503,
+            "dependencies": [
+                9
+            ]
+        },
+        {
+            "id": 11,
+            "profile": "high_40",
+            "res": 1,
+            "subtime": 9.364275067474868,
+            "walltime": 304.742907718836
+        },
+        {
+            "id": 12,
+            "profile": "med_32",
+            "res": 1,
+            "subtime": 9.364275067474868,
+            "walltime": 400.9470106631641,
+            "dependencies": [
+                11
+            ]
+        },
+        {
+            "id": 13,
+            "profile": "high_43",
+            "res": 1,
+            "subtime": 17.70672704562647,
+            "walltime": 308.53507253110354,
+            "dependencies": [
+                10,
+                11
+            ]
+        },
+        {
+            "id": 14,
+            "profile": "high_42",
+            "res": 1,
+            "subtime": 16.25986246394111,
+            "walltime": 360.84911042495924
+        },
+        {
+            "id": 15,
+            "profile": "low_10",
+            "res": 1,
+            "subtime": 16.25986246394111,
+            "walltime": 443.15416580974045,
+            "dependencies": [
+                14
+            ]
+        },
+        {
+            "id": 16,
+            "profile": "high_41",
+            "res": 1,
+            "subtime": 12.223679383505655,
+            "walltime": 533.2022135994724
+        },
+        {
+            "id": 17,
+            "profile": "med_17",
+            "res": 1,
+            "subtime": 18.121141301672342,
+            "walltime": 517.9885095253886
+        },
+        {
+            "id": 18,
+            "profile": "med_25",
+            "res": 1,
+            "subtime": 18.121141301672342,
+            "walltime": 243.24738376382032,
+            "dependencies": [
+                17
+            ]
+        },
+        {
+            "id": 19,
+            "profile": "med_35",
+            "res": 1,
+            "subtime": 18.121141301672342,
+            "walltime": 6.226033128066586,
+            "dependencies": [
+                18
+            ]
+        },
+        {
+            "id": 20,
+            "profile": "low_8",
+            "res": 1,
+            "subtime": 18.121141301672342,
+            "walltime": 196.26618119832193,
+            "dependencies": [
+                19
+            ]
+        },
+        {
+            "id": 21,
+            "profile": "med_32",
+            "res": 1,
+            "subtime": 12.223679383505655,
+            "walltime": 92.1495589399921,
+            "dependencies": [
+                16,
+                17,
+                18,
+                19,
+                20
+            ]
+        },
+        {
+            "id": 22,
+            "profile": "high_36",
+            "res": 1,
+            "subtime": 13.429603289862007,
+            "walltime": 456.7286410358974
+        },
+        {
+            "id": 23,
+            "profile": "med_33",
+            "res": 1,
+            "subtime": 13.429603289862007,
+            "walltime": 182.78108273810818,
+            "dependencies": [
+                22
+            ]
+        },
+        {
+            "id": 24,
+            "profile": "low_5",
+            "res": 1,
+            "subtime": 13.429603289862007,
+            "walltime": 214.67418719753067,
+            "dependencies": [
+                23
+            ]
+        },
+        {
+            "id": 25,
+            "profile": "low_3",
+            "res": 1,
+            "subtime": 13.429603289862007,
+            "walltime": 129.0712333376347,
+            "dependencies": [
+                24
+            ]
+        },
+        {
+            "id": 26,
+            "profile": "high_40",
+            "res": 1,
+            "subtime": 13.429603289862007,
+            "walltime": 588.0381263179955,
+            "dependencies": [
+                22,
+                23,
+                25
+            ]
+        },
+        {
+            "id": 27,
+            "profile": "med_32",
+            "res": 1,
+            "subtime": 1.214732973221599,
+            "walltime": 313.3215418721359
+        },
+        {
+            "id": 28,
+            "profile": "low_15",
+            "res": 1,
+            "subtime": 16.36778728760886,
+            "walltime": 274.42630320922734
+        },
+        {
+            "id": 29,
+            "profile": "med_31",
+            "res": 1,
+            "subtime": 16.36778728760886,
+            "walltime": 116.99123896634119,
+            "dependencies": [
+                28
+            ]
+        },
+        {
+            "id": 30,
+            "profile": "med_22",
+            "res": 1,
+            "subtime": 17.743639499800757,
+            "walltime": 306.8528458392995
+        },
+        {
+            "id": 31,
+            "profile": "med_23",
+            "res": 1,
+            "subtime": 17.743639499800757,
+            "walltime": 40.15176109739122,
+            "dependencies": [
+                30
+            ]
+        },
+        {
+            "id": 32,
+            "profile": "low_5",
+            "res": 1,
+            "subtime": 16.36778728760886,
+            "walltime": 284.4013602873678,
+            "dependencies": [
+                28,
+                30,
+                31
+            ]
+        },
+        {
+            "id": 33,
+            "profile": "low_6",
+            "res": 1,
+            "subtime": 5.746391623559048,
+            "walltime": 25.802876190023184
+        },
+        {
+            "id": 34,
+            "profile": "low_7",
+            "res": 1,
+            "subtime": 5.746391623559048,
+            "walltime": 473.09535800043494,
+            "dependencies": [
+                33
+            ]
+        },
+        {
+            "id": 35,
+            "profile": "low_10",
+            "res": 1,
+            "subtime": 5.746391623559048,
+            "walltime": 236.112581425542,
+            "dependencies": [
+                34
+            ]
+        },
+        {
+            "id": 36,
+            "profile": "low_3",
+            "res": 1,
+            "subtime": 11.320118047857402,
+            "walltime": 433.99804854455334
+        },
+        {
+            "id": 37,
+            "profile": "med_19",
+            "res": 1,
+            "subtime": 5.746391623559048,
+            "walltime": 588.5872030679732,
+            "dependencies": [
+                33,
+                34,
+                35,
+                36
+            ]
+        },
+        {
+            "id": 38,
+            "profile": "med_18",
+            "res": 1,
+            "subtime": 7.330393044192393,
+            "walltime": 311.51987504645683
+        },
+        {
+            "id": 39,
+            "profile": "med_18",
+            "res": 1,
+            "subtime": 18.33212212148045,
+            "walltime": 574.2298636288774
+        },
+        {
+            "id": 40,
+            "profile": "med_29",
+            "res": 1,
+            "subtime": 18.33212212148045,
+            "walltime": 308.4846743603617,
+            "dependencies": [
+                39
+            ]
+        },
+        {
+            "id": 41,
+            "profile": "low_6",
+            "res": 1,
+            "subtime": 7.330393044192393,
+            "walltime": 304.488799234253,
+            "dependencies": [
+                38
+            ]
+        },
+        {
+            "id": 42,
+            "profile": "med_34",
+            "res": 1,
+            "subtime": 3.7082605457388746,
+            "walltime": 473.0244371679017
+        },
+        {
+            "id": 43,
+            "profile": "med_33",
+            "res": 1,
+            "subtime": 10.475023076374153,
+            "walltime": 389.47117320653973
+        },
+        {
+            "id": 44,
+            "profile": "high_47",
+            "res": 1,
+            "subtime": 10.475023076374153,
+            "walltime": 375.3502033981969,
+            "dependencies": [
+                43
+            ]
+        },
+        {
+            "id": 45,
+            "profile": "med_34",
+            "res": 1,
+            "subtime": 3.7082605457388746,
+            "walltime": 6.219391961656035,
+            "dependencies": [
+                42,
+                44
+            ]
+        },
+        {
+            "id": 46,
+            "profile": "med_23",
+            "res": 1,
+            "subtime": 6.536701606552853,
+            "walltime": 358.27322297331887
+        },
+        {
+            "id": 47,
+            "profile": "med_31",
+            "res": 1,
+            "subtime": 5.204133774040661,
+            "walltime": 138.24859053014515
+        },
+        {
+            "id": 48,
+            "profile": "low_3",
+            "res": 1,
+            "subtime": 12.706571429907193,
+            "walltime": 587.9143374323003
+        },
+        {
+            "id": 49,
+            "profile": "low_8",
+            "res": 1,
+            "subtime": 3.111626732143361,
+            "walltime": 453.7800578703278
+        },
+        {
+            "id": 50,
+            "profile": "high_42",
+            "res": 1,
+            "subtime": 3.111626732143361,
+            "walltime": 39.06078164010873,
+            "dependencies": [
+                49
+            ]
+        },
+        {
+            "id": 51,
+            "profile": "high_42",
+            "res": 1,
+            "subtime": 6.21466740494956,
+            "walltime": 452.50047206450273
+        },
+        {
+            "id": 52,
+            "profile": "med_22",
+            "res": 1,
+            "subtime": 4.701188596541586,
+            "walltime": 355.543709260991
+        },
+        {
+            "id": 53,
+            "profile": "med_25",
+            "res": 1,
+            "subtime": 4.701188596541586,
+            "walltime": 584.5447551503685,
+            "dependencies": [
+                52
+            ]
+        },
+        {
+            "id": 54,
+            "profile": "high_38",
+            "res": 1,
+            "subtime": 3.111626732143361,
+            "walltime": 144.55295741346953,
+            "dependencies": [
+                49,
+                50,
+                51,
+                53
+            ]
+        },
+        {
+            "id": 55,
+            "profile": "low_12",
+            "res": 1,
+            "subtime": 7.787300982005134,
+            "walltime": 228.77468528069474
+        },
+        {
+            "id": 56,
+            "profile": "med_30",
+            "res": 1,
+            "subtime": 7.787300982005134,
+            "walltime": 193.1525168117639,
+            "dependencies": [
+                55
+            ]
+        },
+        {
+            "id": 57,
+            "profile": "low_9",
+            "res": 1,
+            "subtime": 3.803322914420252,
+            "walltime": 260.248799310025
+        },
+        {
+            "id": 58,
+            "profile": "med_35",
+            "res": 1,
+            "subtime": 3.803322914420252,
+            "walltime": 193.2582448235733,
+            "dependencies": [
+                57
+            ]
+        },
+        {
+            "id": 59,
+            "profile": "low_4",
+            "res": 1,
+            "subtime": 3.803322914420252,
+            "walltime": 219.08732349936278,
+            "dependencies": [
+                57,
+                58
+            ]
+        },
+        {
+            "id": 60,
+            "profile": "med_24",
+            "res": 1,
+            "subtime": 13.911031425832556,
+            "walltime": 406.0669446522013
+        },
+        {
+            "id": 61,
+            "profile": "low_14",
+            "res": 1,
+            "subtime": 13.911031425832556,
+            "walltime": 443.9105636214257,
+            "dependencies": [
+                60
+            ]
+        },
+        {
+            "id": 62,
+            "profile": "med_31",
+            "res": 1,
+            "subtime": 7.299217609080628,
+            "walltime": 20.1849872494579
+        },
+        {
+            "id": 63,
+            "profile": "high_47",
+            "res": 1,
+            "subtime": 7.299217609080628,
+            "walltime": 504.0368261599027,
+            "dependencies": [
+                62
+            ]
+        },
+        {
+            "id": 64,
+            "profile": "low_12",
+            "res": 1,
+            "subtime": 7.299217609080628,
+            "walltime": 566.6594244389369,
+            "dependencies": [
+                63
+            ]
+        },
+        {
+            "id": 65,
+            "profile": "med_19",
+            "res": 1,
+            "subtime": 7.299217609080628,
+            "walltime": 266.91756098566367,
+            "dependencies": [
+                64
+            ]
+        },
+        {
+            "id": 66,
+            "profile": "med_33",
+            "res": 1,
+            "subtime": 7.563713048264356,
+            "walltime": 2.6049381767792887
+        },
+        {
+            "id": 67,
+            "profile": "low_1",
+            "res": 1,
+            "subtime": 6.998708828928071,
+            "walltime": 395.3804402154789
+        },
+        {
+            "id": 68,
+            "profile": "low_1",
+            "res": 1,
+            "subtime": 8.85357243014413,
+            "walltime": 186.27130441389943
+        },
+        {
+            "id": 69,
+            "profile": "med_30",
+            "res": 1,
+            "subtime": 8.85357243014413,
+            "walltime": 202.90393723355453,
+            "dependencies": [
+                68
+            ]
+        },
+        {
+            "id": 70,
+            "profile": "low_6",
+            "res": 1,
+            "subtime": 13.911031425832556,
+            "walltime": 107.4110729661022,
+            "dependencies": [
+                60,
+                61,
+                62,
+                63,
+                64,
+                66,
+                67,
+                69
+            ]
+        },
+        {
+            "id": 71,
+            "profile": "low_6",
+            "res": 1,
+            "subtime": 13.847875410328111,
+            "walltime": 98.92585757231831
+        },
+        {
+            "id": 72,
+            "profile": "med_34",
+            "res": 1,
+            "subtime": 3.6358305784487155,
+            "walltime": 474.48738895527987
+        },
+        {
+            "id": 73,
+            "profile": "med_20",
+            "res": 1,
+            "subtime": 3.6358305784487155,
+            "walltime": 7.533481875595745,
+            "dependencies": [
+                72
+            ]
+        },
+        {
+            "id": 74,
+            "profile": "med_35",
+            "res": 1,
+            "subtime": 3.6358305784487155,
+            "walltime": 422.57200381566156,
+            "dependencies": [
+                73
+            ]
+        },
+        {
+            "id": 75,
+            "profile": "low_11",
+            "res": 1,
+            "subtime": 13.847875410328111,
+            "walltime": 369.23767494351944,
+            "dependencies": [
+                71,
+                72,
+                73,
+                74
+            ]
+        },
+        {
+            "id": 76,
+            "profile": "low_4",
+            "res": 1,
+            "subtime": 15.824943967853148,
+            "walltime": 60.2685673963922
+        },
+        {
+            "id": 77,
+            "profile": "low_2",
+            "res": 1,
+            "subtime": 15.824943967853148,
+            "walltime": 202.96951423699483,
+            "dependencies": [
+                76
+            ]
+        },
+        {
+            "id": 78,
+            "profile": "high_40",
+            "res": 1,
+            "subtime": 15.824943967853148,
+            "walltime": 575.6551865266155,
+            "dependencies": [
+                77
+            ]
+        },
+        {
+            "id": 79,
+            "profile": "high_36",
+            "res": 1,
+            "subtime": 15.824943967853148,
+            "walltime": 234.79850021204197,
+            "dependencies": [
+                78
+            ]
+        },
+        {
+            "id": 80,
+            "profile": "med_20",
+            "res": 1,
+            "subtime": 16.491767119505777,
+            "walltime": 135.40485089841687
+        },
+        {
+            "id": 81,
+            "profile": "med_17",
+            "res": 1,
+            "subtime": 16.491767119505777,
+            "walltime": 280.21546593566524,
+            "dependencies": [
+                80
+            ]
+        },
+        {
+            "id": 82,
+            "profile": "med_26",
+            "res": 1,
+            "subtime": 16.491767119505777,
+            "walltime": 175.06149478962095,
+            "dependencies": [
+                81
+            ]
+        },
+        {
+            "id": 83,
+            "profile": "med_29",
+            "res": 1,
+            "subtime": 16.491767119505777,
+            "walltime": 406.2783164212154,
+            "dependencies": [
+                82
+            ]
+        },
+        {
+            "id": 84,
+            "profile": "low_15",
+            "res": 1,
+            "subtime": 16.491767119505777,
+            "walltime": 159.9982870220979,
+            "dependencies": [
+                83
+            ]
+        },
+        {
+            "id": 85,
+            "profile": "low_5",
+            "res": 1,
+            "subtime": 16.491767119505777,
+            "walltime": 306.9782718896577,
+            "dependencies": [
+                84
+            ]
+        },
+        {
+            "id": 86,
+            "profile": "high_46",
+            "res": 1,
+            "subtime": 15.824943967853148,
+            "walltime": 111.31001314915288,
+            "dependencies": [
+                77,
+                78,
+                79,
+                80,
+                82,
+                84,
+                85
+            ]
+        },
+        {
+            "id": 87,
+            "profile": "high_44",
+            "res": 1,
+            "subtime": 14.254936861385124,
+            "walltime": 514.6443785767468
+        },
+        {
+            "id": 88,
+            "profile": "high_42",
+            "res": 1,
+            "subtime": 6.89607607636369,
+            "walltime": 326.05837354872966
+        },
+        {
+            "id": 89,
+            "profile": "low_12",
+            "res": 1,
+            "subtime": 11.493027946336372,
+            "walltime": 497.8920051143
+        },
+        {
+            "id": 90,
+            "profile": "low_4",
+            "res": 1,
+            "subtime": 11.493027946336372,
+            "walltime": 249.88760998840098,
+            "dependencies": [
+                89
+            ]
+        },
+        {
+            "id": 91,
+            "profile": "med_25",
+            "res": 1,
+            "subtime": 11.493027946336372,
+            "walltime": 309.9729988963167,
+            "dependencies": [
+                90
+            ]
+        },
+        {
+            "id": 92,
+            "profile": "high_41",
+            "res": 1,
+            "subtime": 11.493027946336372,
+            "walltime": 417.2691401384964,
+            "dependencies": [
+                91
+            ]
+        },
+        {
+            "id": 93,
+            "profile": "med_33",
+            "res": 1,
+            "subtime": 15.50338081441758,
+            "walltime": 590.4941794436661
+        },
+        {
+            "id": 94,
+            "profile": "low_12",
+            "res": 1,
+            "subtime": 4.3007315986335355,
+            "walltime": 312.49025812683067
+        },
+        {
+            "id": 95,
+            "profile": "high_37",
+            "res": 1,
+            "subtime": 4.3007315986335355,
+            "walltime": 226.9770537071987,
+            "dependencies": [
+                94
+            ]
+        },
+        {
+            "id": 96,
+            "profile": "med_23",
+            "res": 1,
+            "subtime": 10.79160420455001,
+            "walltime": 437.9808557442666
+        },
+        {
+            "id": 97,
+            "profile": "high_44",
+            "res": 1,
+            "subtime": 11.493027946336372,
+            "walltime": 149.64180833021993,
+            "dependencies": [
+                90,
+                91,
+                92,
+                93,
+                94,
+                96
+            ]
+        },
+        {
+            "id": 98,
+            "profile": "med_17",
+            "res": 1,
+            "subtime": 6.14437869639288,
+            "walltime": 378.3321836725607
+        },
+        {
+            "id": 99,
+            "profile": "high_38",
+            "res": 1,
+            "subtime": 6.14437869639288,
+            "walltime": 304.36334839145985,
+            "dependencies": [
+                98
+            ]
+        },
+        {
+            "id": 100,
+            "profile": "med_22",
+            "res": 1,
+            "subtime": 6.14437869639288,
+            "walltime": 197.55084901024574,
+            "dependencies": [
+                99
+            ]
+        },
+        {
+            "id": 101,
+            "profile": "med_23",
+            "res": 1,
+            "subtime": 6.14437869639288,
+            "walltime": 151.94790496066446,
+            "dependencies": [
+                100
+            ]
+        },
+        {
+            "id": 102,
+            "profile": "med_35",
+            "res": 1,
+            "subtime": 6.14437869639288,
+            "walltime": 209.5594184477182,
+            "dependencies": [
+                98,
+                99,
+                100,
+                101
+            ]
+        }
+    ]
+}
