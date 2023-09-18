@@ -106,6 +106,7 @@ class Fcfs_sched(BatsimScheduler):
         self.computing_machines -= job.allocation
     
     def onDeadlock(self):
+        print("Warning: deadlock detected!")
         self.bs.end_simulation()
 
     def onNoMoreEvents(self):
