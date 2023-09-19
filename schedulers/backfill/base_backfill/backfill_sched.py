@@ -6,7 +6,7 @@ from itertools import islice
 
 from batsim.batsim import BatsimScheduler
 
-class Fcfs_sched(BatsimScheduler):
+class Backfill_sched(BatsimScheduler):
     def __init__(self, options):
         super().__init__(options)
         self.logger.info("FCFS with Dependencies init")
@@ -64,6 +64,21 @@ class Fcfs_sched(BatsimScheduler):
         ready_jobs = [job for job in self.open_jobs if self.job_is_ready(job)]
         print('ready_jobs can be scheduled! = ', [job.id for job in ready_jobs])
 
+        # First, try to schedule the job at the front of the queue
+        if ready_jobs:
+            front_job = ready_jobs[0]
+            if front_job.requested_resources <= len(self.idle_machines):
+                res = ProcSet(*islice(self.idle_machines, front_job.requested_resources))
+                front_job.allocation = res
+                scheduled_jobs.append(front_job)
+                print(f"Front job {front_job.id} is scheduled!")
+
+                self.computing_machines |= res
+                self.idle_machines -= res
+                self.open_jobs.remove(front_job)
+                ready_jobs.remove(front_job)
+
+        # Now, try to backfill other jobs without delaying the front job
         for job in ready_jobs:
             nb_res_req = job.requested_resources
 
@@ -72,7 +87,7 @@ class Fcfs_sched(BatsimScheduler):
                 res = ProcSet(*islice(self.idle_machines, nb_res_req))
                 job.allocation = res
                 scheduled_jobs.append(job)
-                print(f"Job {job.id} is scheduled!")
+                print(f"Job {job.id} is scheduled using backfill!")
 
                 self.computing_machines |= res
                 self.idle_machines -= res
@@ -83,6 +98,7 @@ class Fcfs_sched(BatsimScheduler):
 
         # Send decision to batsim
         self.bs.execute_jobs(scheduled_jobs)
+
 
     def onJobSubmission(self, job):
         print(f"Job {job.id} submitted")

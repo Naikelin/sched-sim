@@ -1,4 +1,4 @@
-batcmd: batsim -p platforms/small_platform.xml -w workloads/workload0.json -e output/fcfs/base_fcfs
+batcmd: batsim -p platforms/small_platform.xml -w workloads/workload.json -e output/fcfs/base_fcfs
 failure-timeout: 5
 output-dir: output/fcfs/base_fcfs
 ready-timeout: 10

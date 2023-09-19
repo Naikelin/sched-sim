@@ -1,0 +1,7 @@
+batcmd: batsim -p platforms/small_platform.xml -w workloads/workload.json -e output/backfill/base_backfill
+failure-timeout: 5
+output-dir: output/backfill/base_backfill
+ready-timeout: 10
+schedcmd: pybatsim schedulers/backfill/base_backfill/backfill_sched.py
+simulation-timeout: 604800
+success-timeout: 3600
