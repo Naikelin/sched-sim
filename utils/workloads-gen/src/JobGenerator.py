@@ -89,51 +89,36 @@ class JobGenerator:
             job_data.append(job)
         return job_data
     
-    def generate_variable_dag(self, duration=60, check_interval=1, arrival_probability=0.3, num_jobs=3):
-        # duration: duración total en minutos
-        # check_interval: cada cuántos minutos verificar si llega un trabajo
-        # arrival_probability: probabilidad de que llegue un trabajo en cada intervalo
-        # num_jobs: número de DAGs en cada trabajo generado
+    def generate_variable_dag(self, probability_function, base_graph, check_interval, duration):
+        """
+        probability_function: Una función que toma un tiempo (en segundos) y devuelve una probabilidad.
+        base_graph: Un grafo base que se repetirá cada vez que se decida generar un trabajo.
+        check_interval: Cada cuántos segundos se verificará la función de probabilidad.
+        duration: Duración total de la simulación en segundos.
+        """
         
-        # Obtener todos los perfiles disponibles
-        load_profiles = list(self.profiles.keys())
-
-        # Lista para almacenar las dependencias cruzadas del primer DAG
-        cross_dependencies = []
-
         current_time = 0  # Iniciar el tiempo actual
+
         while current_time < duration:
-            if np.random.rand() < arrival_probability:
-                # Genera el DAG con carga variable
-                previous_node = None
-                nodes_in_current_dag = []  # Lista para almacenar los nodos del DAG actual
-                for i in range(num_jobs):
-                    # Selecciona un perfil aleatoriamente para variar la carga
-                    profile = np.random.choice(load_profiles)
-                    current_node = self.add_job(profile, subtime=current_time + i)
-
-                    # Si hay un nodo anterior, añade una dependencia
-                    if previous_node is not None:
-                        self.add_dependency(previous_node, current_node)
-                    nodes_in_current_dag.append(current_node)
-                    previous_node = current_node
-
-                # Añadir dependencias cruzadas
-                cross_dependency_profile = np.random.choice(load_profiles)
-                cross_dependency_node = self.add_job(cross_dependency_profile, subtime=current_time)
-                
-                # Si es la primera vez que se genera un DAG, determina las dependencias cruzadas
-                if not cross_dependencies:
-                    for node in nodes_in_current_dag:
-                        # Variar la probabilidad de añadir una dependencia cruzada entre 30% y 70%
-                        if np.random.rand() < np.random.uniform(0.3, 0.7):
-                            self.add_dependency(node, cross_dependency_node)
-                            cross_dependencies.append(node)
-                else:
-                    # En las siguientes veces, usa las mismas dependencias cruzadas
-                    for node_index in cross_dependencies:
-                        adjusted_node = node_index + len(self.graph.nodes()) - num_jobs - 1
-                        self.add_dependency(adjusted_node, cross_dependency_node)
+            if np.random.rand() < probability_function(current_time):
+                # Si se decide generar un trabajo, copiamos el grafo base y lo añadimos al grafo actual
+                offset = len(self.graph.nodes())
+                for node, data in base_graph.nodes(data=True):
+                    # Seleccionar un perfil aleatorio
+                    profile_name = np.random.choice(list(self.profiles.keys()))
+                    profile = self.profiles[profile_name]
+                    
+                    # Asignar propiedades al nodo
+                    node_data = {
+                        'profile': profile_name,
+                        'walltime': profile.get('walltime', 2 * 60 * 60),  # Default a 2 horas si no se especifica
+                        'subtime': current_time,
+                        'resources_required': profile.get('np', 1)  # Default a 1 si no se especifica
+                    }
+                    
+                    self.graph.add_node(node + offset, **node_data)
+                for edge in base_graph.edges():
+                    self.graph.add_edge(edge[0] + offset, edge[1] + offset)
 
             current_time += check_interval
 

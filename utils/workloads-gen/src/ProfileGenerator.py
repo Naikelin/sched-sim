@@ -78,7 +78,7 @@ class ProfileGenerator:
         return self.generate_profile((MID_CPU_MAX, HIGH_CPU_MAX), (MID_COM_MAX, HIGH_COM_MAX), "high")
 
     def generate(self, number_of_profiles=10, low_percent=0.3, med_percent=0.4, high_percent=0.3):
-        assert low_percent + med_percent + high_percent == 1.0
+        assert low_percent + med_percent + high_percent == 1.0, f"La suma de los porcentajes debe ser 1.0, es {low_percent + med_percent + high_percent}"
         
         num_low = int(number_of_profiles * low_percent)
         num_med = int(number_of_profiles * med_percent)
@@ -102,3 +102,8 @@ class ProfileGenerator:
     def to_json(self):
         """Convierte los perfiles generados en una representación JSON."""
         return json.dumps(self.profiles, indent=4)
+    
+    def load_from_json(self, json_str):
+        """Carga los perfiles desde una representación JSON."""
+        self.profiles = json.loads(json_str)
+        return self.profiles
