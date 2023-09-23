@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE platform
+  SYSTEM 'https://simgrid.org/simgrid.dtd'>
+<platform version="4.1">
+    <zone id="main" routing="Full">
+        <zone id="cluster_compute" routing="Full">
+            <host speed="10.0Gf, 9.0Gf" id="c0">
+                <prop id="sleep_pstates" value="2:3:4"/>
+                <prop id="wattage_per_state" value="4.0:8.0, 4.0:7.2, 1.0:1.0, 3.0:3.0, 3.0:3.0"/>
+                <prop id="wattage_off" value="2.0"/>
+            </host>
+            <host speed="10.0Gf, 9.0Gf" id="c1">
+                <prop id="sleep_pstates" value="2:3:4"/>
+                <prop id="wattage_per_state" value="4.0:8.0, 4.0:7.2, 1.0:1.0, 3.0:3.0, 3.0:3.0"/>
+                <prop id="wattage_off" value="2.0"/>
+            </host>
+            <host speed="10.0Gf, 9.0Gf" id="c2">
+                <prop id="sleep_pstates" value="2:3:4"/>
+                <prop id="wattage_per_state" value="4.0:8.0, 4.0:7.2, 1.0:1.0, 3.0:3.0, 3.0:3.0"/>
+                <prop id="wattage_off" value="2.0"/>
+            </host>
+            <host speed="10.0Gf, 9.0Gf" id="c3">
+                <prop id="sleep_pstates" value="2:3:4"/>
+                <prop id="wattage_per_state" value="4.0:8.0, 4.0:7.2, 1.0:1.0, 3.0:3.0, 3.0:3.0"/>
+                <prop id="wattage_off" value="2.0"/>
+            </host>
+            <host speed="10.0Gf, 9.0Gf" id="c4">
+                <prop id="sleep_pstates" value="2:3:4"/>
+                <prop id="wattage_per_state" value="4.0:8.0, 4.0:7.2, 1.0:1.0, 3.0:3.0, 3.0:3.0"/>
+                <prop id="wattage_off" value="2.0"/>
+            </host>
+            <host speed="10.0Gf, 9.0Gf" id="c5">
+                <prop id="sleep_pstates" value="2:3:4"/>
+                <prop id="wattage_per_state" value="4.0:8.0, 4.0:7.2, 1.0:1.0, 3.0:3.0, 3.0:3.0"/>
+                <prop id="wattage_off" value="2.0"/>
+            </host>
+            <host speed="10.0Gf, 9.0Gf" id="c6">
+                <prop id="sleep_pstates" value="2:3:4"/>
+                <prop id="wattage_per_state" value="4.0:8.0, 4.0:7.2, 1.0:1.0, 3.0:3.0, 3.0:3.0"/>
+                <prop id="wattage_off" value="2.0"/>
+            </host>
+            <host speed="10.0Gf, 9.0Gf" id="c7">
+                <prop id="sleep_pstates" value="2:3:4"/>
+                <prop id="wattage_per_state" value="4.0:8.0, 4.0:7.2, 1.0:1.0, 3.0:3.0, 3.0:3.0"/>
+                <prop id="wattage_off" value="2.0"/>
+            </host>
+            <host speed="10.0Gf, 9.0Gf" id="c8">
+                <prop id="sleep_pstates" value="2:3:4"/>
+                <prop id="wattage_per_state" value="4.0:8.0, 4.0:7.2, 1.0:1.0, 3.0:3.0, 3.0:3.0"/>
+                <prop id="wattage_off" value="2.0"/>
+            </host>
+            <host speed="10.0Gf, 9.0Gf" id="c9">
+                <prop id="sleep_pstates" value="2:3:4"/>
+                <prop id="wattage_per_state" value="4.0:8.0, 4.0:7.2, 1.0:1.0, 3.0:3.0, 3.0:3.0"/>
+                <prop id="wattage_off" value="2.0"/>
+            </host>
+            <host speed="10.0Gf, 9.0Gf" id="c10">
+                <prop id="sleep_pstates" value="2:3:4"/>
+                <prop id="wattage_per_state" value="4.0:8.0, 4.0:7.2, 1.0:1.0, 3.0:3.0, 3.0:3.0"/>
+                <prop id="wattage_off" value="2.0"/>
+            </host>
+            <host speed="10.0Gf, 9.0Gf" id="c11">
+                <prop id="sleep_pstates" value="2:3:4"/>
+                <prop id="wattage_per_state" value="4.0:8.0, 4.0:7.2, 1.0:1.0, 3.0:3.0, 3.0:3.0"/>
+                <prop id="wattage_off" value="2.0"/>
+            </host>
+            <host speed="10.0Gf, 9.0Gf" id="c12">
+                <prop id="sleep_pstates" value="2:3:4"/>
+                <prop id="wattage_per_state" value="4.0:8.0, 4.0:7.2, 1.0:1.0, 3.0:3.0, 3.0:3.0"/>
+                <prop id="wattage_off" value="2.0"/>
+            </host>
+            <host speed="10.0Gf, 9.0Gf" id="c13">
+                <prop id="sleep_pstates" value="2:3:4"/>
+                <prop id="wattage_per_state" value="4.0:8.0, 4.0:7.2, 1.0:1.0, 3.0:3.0, 3.0:3.0"/>
+                <prop id="wattage_off" value="2.0"/>
+            </host>
+            <host speed="10.0Gf, 9.0Gf" id="c14">
+                <prop id="sleep_pstates" value="2:3:4"/>
+                <prop id="wattage_per_state" value="4.0:8.0, 4.0:7.2, 1.0:1.0, 3.0:3.0, 3.0:3.0"/>
+                <prop id="wattage_off" value="2.0"/>
+            </host>
+            <host speed="10.0Gf, 9.0Gf" id="c15">
+                <prop id="sleep_pstates" value="2:3:4"/>
+                <prop id="wattage_per_state" value="4.0:8.0, 4.0:7.2, 1.0:1.0, 3.0:3.0, 3.0:3.0"/>
+                <prop id="wattage_off" value="2.0"/>
+            </host>
+            <host speed="10.0Gf, 9.0Gf" id="c16">
+                <prop id="sleep_pstates" value="2:3:4"/>
+                <prop id="wattage_per_state" value="4.0:8.0, 4.0:7.2, 1.0:1.0, 3.0:3.0, 3.0:3.0"/>
+                <prop id="wattage_off" value="2.0"/>
+            </host>
+            <host speed="10.0Gf, 9.0Gf" id="c17">
+                <prop id="sleep_pstates" value="2:3:4"/>
+                <prop id="wattage_per_state" value="4.0:8.0, 4.0:7.2, 1.0:1.0, 3.0:3.0, 3.0:3.0"/>
+                <prop id="wattage_off" value="2.0"/>
+            </host>
+            <host speed="10.0Gf, 9.0Gf" id="c18">
+                <prop id="sleep_pstates" value="2:3:4"/>
+                <prop id="wattage_per_state" value="4.0:8.0, 4.0:7.2, 1.0:1.0, 3.0:3.0, 3.0:3.0"/>
+                <prop id="wattage_off" value="2.0"/>
+            </host>
+            <host speed="10.0Gf, 9.0Gf" id="c19">
+                <prop id="sleep_pstates" value="2:3:4"/>
+                <prop id="wattage_per_state" value="4.0:8.0, 4.0:7.2, 1.0:1.0, 3.0:3.0, 3.0:3.0"/>
+                <prop id="wattage_off" value="2.0"/>
+            </host>
+            <host speed="10.0Gf, 9.0Gf" id="c20">
+                <prop id="sleep_pstates" value="2:3:4"/>
+                <prop id="wattage_per_state" value="4.0:8.0, 4.0:7.2, 1.0:1.0, 3.0:3.0, 3.0:3.0"/>
+                <prop id="wattage_off" value="2.0"/>
+            </host>
+            <host speed="10.0Gf, 9.0Gf" id="c21">
+                <prop id="sleep_pstates" value="2:3:4"/>
+                <prop id="wattage_per_state" value="4.0:8.0, 4.0:7.2, 1.0:1.0, 3.0:3.0, 3.0:3.0"/>
+                <prop id="wattage_off" value="2.0"/>
+            </host>
+            <host speed="10.0Gf, 9.0Gf" id="c22">
+                <prop id="sleep_pstates" value="2:3:4"/>
+                <prop id="wattage_per_state" value="4.0:8.0, 4.0:7.2, 1.0:1.0, 3.0:3.0, 3.0:3.0"/>
+                <prop id="wattage_off" value="2.0"/>
+            </host>
+            <host speed="10.0Gf, 9.0Gf" id="c23">
+                <prop id="sleep_pstates" value="2:3:4"/>
+                <prop id="wattage_per_state" value="4.0:8.0, 4.0:7.2, 1.0:1.0, 3.0:3.0, 3.0:3.0"/>
+                <prop id="wattage_off" value="2.0"/>
+            </host>
+            <host speed="10.0Gf, 9.0Gf" id="c24">
+                <prop id="sleep_pstates" value="2:3:4"/>
+                <prop id="wattage_per_state" value="4.0:8.0, 4.0:7.2, 1.0:1.0, 3.0:3.0, 3.0:3.0"/>
+                <prop id="wattage_off" value="2.0"/>
+            </host>
+            <host speed="10.0Gf, 9.0Gf" id="c25">
+                <prop id="sleep_pstates" value="2:3:4"/>
+                <prop id="wattage_per_state" value="4.0:8.0, 4.0:7.2, 1.0:1.0, 3.0:3.0, 3.0:3.0"/>
+                <prop id="wattage_off" value="2.0"/>
+            </host>
+            <host speed="10.0Gf, 9.0Gf" id="c26">
+                <prop id="sleep_pstates" value="2:3:4"/>
+                <prop id="wattage_per_state" value="4.0:8.0, 4.0:7.2, 1.0:1.0, 3.0:3.0, 3.0:3.0"/>
+                <prop id="wattage_off" value="2.0"/>
+            </host>
+            <host speed="10.0Gf, 9.0Gf" id="c27">
+                <prop id="sleep_pstates" value="2:3:4"/>
+                <prop id="wattage_per_state" value="4.0:8.0, 4.0:7.2, 1.0:1.0, 3.0:3.0, 3.0:3.0"/>
+                <prop id="wattage_off" value="2.0"/>
+            </host>
+            <host speed="10.0Gf, 9.0Gf" id="c28">
+                <prop id="sleep_pstates" value="2:3:4"/>
+                <prop id="wattage_per_state" value="4.0:8.0, 4.0:7.2, 1.0:1.0, 3.0:3.0, 3.0:3.0"/>
+                <prop id="wattage_off" value="2.0"/>
+            </host>
+            <host speed="10.0Gf, 9.0Gf" id="c29">
+                <prop id="sleep_pstates" value="2:3:4"/>
+                <prop id="wattage_per_state" value="4.0:8.0, 4.0:7.2, 1.0:1.0, 3.0:3.0, 3.0:3.0"/>
+                <prop id="wattage_off" value="2.0"/>
+            </host>
+            <host speed="10.0Gf, 9.0Gf" id="c30">
+                <prop id="sleep_pstates" value="2:3:4"/>
+                <prop id="wattage_per_state" value="4.0:8.0, 4.0:7.2, 1.0:1.0, 3.0:3.0, 3.0:3.0"/>
+                <prop id="wattage_off" value="2.0"/>
+            </host>
+            <host speed="10.0Gf, 9.0Gf" id="c31">
+                <prop id="sleep_pstates" value="2:3:4"/>
+                <prop id="wattage_per_state" value="4.0:8.0, 4.0:7.2, 1.0:1.0, 3.0:3.0, 3.0:3.0"/>
+                <prop id="wattage_off" value="2.0"/>
+            </host>
+            <router id="r10"/>
+            <router id="r11"/>
+            <router id="r12"/>
+            <router id="r13"/>
+            <router id="r14"/>
+            <router id="r15"/>
+            <router id="r16"/>
+            <router id="r17"/>
+            <router id="r20"/>
+            <router id="r21"/>
+            <router id="r22"/>
+            <router id="r23"/>
+            <router id="r30"/>
+            <router id="r31"/>
+            <router id="r32"/>
+            <router id="r33"/>
+            <router id="router_master"/>
+            <link id="r10-c0" bandwidth="125MBps" latency="100us"/>
+            <link id="r10-c1" bandwidth="125MBps" latency="100us"/>
+            <link id="r10-c2" bandwidth="125MBps" latency="100us"/>
+            <link id="r10-c3" bandwidth="125MBps" latency="100us"/>
+            <link id="r11-c4" bandwidth="125MBps" latency="100us"/>
+            <link id="r11-c5" bandwidth="125MBps" latency="100us"/>
+            <link id="r11-c6" bandwidth="125MBps" latency="100us"/>
+            <link id="r11-c7" bandwidth="125MBps" latency="100us"/>
+            <link id="r12-c8" bandwidth="125MBps" latency="100us"/>
+            <link id="r12-c9" bandwidth="125MBps" latency="100us"/>
+            <link id="r12-c10" bandwidth="125MBps" latency="100us"/>
+            <link id="r12-c11" bandwidth="125MBps" latency="100us"/>
+            <link id="r13-c12" bandwidth="125MBps" latency="100us"/>
+            <link id="r13-c13" bandwidth="125MBps" latency="100us"/>
+            <link id="r13-c14" bandwidth="125MBps" latency="100us"/>
+            <link id="r13-c15" bandwidth="125MBps" latency="100us"/>
+            <link id="r14-c16" bandwidth="125MBps" latency="100us"/>
+            <link id="r14-c17" bandwidth="125MBps" latency="100us"/>
+            <link id="r14-c18" bandwidth="125MBps" latency="100us"/>
+            <link id="r14-c19" bandwidth="125MBps" latency="100us"/>
+            <link id="r15-c20" bandwidth="125MBps" latency="100us"/>
+            <link id="r15-c21" bandwidth="125MBps" latency="100us"/>
+            <link id="r15-c22" bandwidth="125MBps" latency="100us"/>
+            <link id="r15-c23" bandwidth="125MBps" latency="100us"/>
+            <link id="r16-c24" bandwidth="125MBps" latency="100us"/>
+            <link id="r16-c25" bandwidth="125MBps" latency="100us"/>
+            <link id="r16-c26" bandwidth="125MBps" latency="100us"/>
+            <link id="r16-c27" bandwidth="125MBps" latency="100us"/>
+            <link id="r17-c28" bandwidth="125MBps" latency="100us"/>
+            <link id="r17-c29" bandwidth="125MBps" latency="100us"/>
+            <link id="r17-c30" bandwidth="125MBps" latency="100us"/>
+            <link id="r17-c31" bandwidth="125MBps" latency="100us"/>
+            <link id="r20-r10" bandwidth="125MBps" latency="100us"/>
+            <link id="r20-r11" bandwidth="125MBps" latency="100us"/>
+            <link id="r20-r12" bandwidth="125MBps" latency="100us"/>
+            <link id="r20-r13" bandwidth="125MBps" latency="100us"/>
+            <link id="r21-r14" bandwidth="125MBps" latency="100us"/>
+            <link id="r21-r15" bandwidth="125MBps" latency="100us"/>
+            <link id="r21-r16" bandwidth="125MBps" latency="100us"/>
+            <link id="r21-r17" bandwidth="125MBps" latency="100us"/>
+            <link id="r22-r10" bandwidth="125MBps" latency="100us"/>
+            <link id="r22-r11" bandwidth="125MBps" latency="100us"/>
+            <link id="r22-r12" bandwidth="125MBps" latency="100us"/>
+            <link id="r22-r13" bandwidth="125MBps" latency="100us"/>
+            <link id="r23-r14" bandwidth="125MBps" latency="100us"/>
+            <link id="r23-r15" bandwidth="125MBps" latency="100us"/>
+            <link id="r23-r16" bandwidth="125MBps" latency="100us"/>
+            <link id="r23-r17" bandwidth="125MBps" latency="100us"/>
+            <link id="r30-r20" bandwidth="125MBps" latency="100us"/>
+            <link id="r30-r21" bandwidth="125MBps" latency="100us"/>
+            <link id="r31-r22" bandwidth="125MBps" latency="100us"/>
+            <link id="r31-r23" bandwidth="125MBps" latency="100us"/>
+            <link id="r32-r20" bandwidth="125MBps" latency="100us"/>
+            <link id="r32-r21" bandwidth="125MBps" latency="100us"/>
+            <link id="r33-r22" bandwidth="125MBps" latency="100us"/>
+            <link id="r33-r23" bandwidth="125MBps" latency="100us"/>
+            <link id="router_master-r30" bandwidth="125MBps" latency="100us"/>
+            <link id="router_master-r31" bandwidth="125MBps" latency="100us"/>
+            <link id="router_master-r32" bandwidth="125MBps" latency="100us"/>
+            <link id="router_master-r33" bandwidth="125MBps" latency="100us"/>
+            <route src="r10" dst="c0">
+                <link_ctn id="r10-c0"/>
+            </route>
+            <route src="r10" dst="c1">
+                <link_ctn id="r10-c1"/>
+            </route>
+            <route src="r10" dst="c2">
+                <link_ctn id="r10-c2"/>
+            </route>
+            <route src="r10" dst="c3">
+                <link_ctn id="r10-c3"/>
+            </route>
+            <route src="r11" dst="c4">
+                <link_ctn id="r11-c4"/>
+            </route>
+            <route src="r11" dst="c5">
+                <link_ctn id="r11-c5"/>
+            </route>
+            <route src="r11" dst="c6">
+                <link_ctn id="r11-c6"/>
+            </route>
+            <route src="r11" dst="c7">
+                <link_ctn id="r11-c7"/>
+            </route>
+            <route src="r12" dst="c8">
+                <link_ctn id="r12-c8"/>
+            </route>
+            <route src="r12" dst="c9">
+                <link_ctn id="r12-c9"/>
+            </route>
+            <route src="r12" dst="c10">
+                <link_ctn id="r12-c10"/>
+            </route>
+            <route src="r12" dst="c11">
+                <link_ctn id="r12-c11"/>
+            </route>
+            <route src="r13" dst="c12">
+                <link_ctn id="r13-c12"/>
+            </route>
+            <route src="r13" dst="c13">
+                <link_ctn id="r13-c13"/>
+            </route>
+            <route src="r13" dst="c14">
+                <link_ctn id="r13-c14"/>
+            </route>
+            <route src="r13" dst="c15">
+                <link_ctn id="r13-c15"/>
+            </route>
+            <route src="r14" dst="c16">
+                <link_ctn id="r14-c16"/>
+            </route>
+            <route src="r14" dst="c17">
+                <link_ctn id="r14-c17"/>
+            </route>
+            <route src="r14" dst="c18">
+                <link_ctn id="r14-c18"/>
+            </route>
+            <route src="r14" dst="c19">
+                <link_ctn id="r14-c19"/>
+            </route>
+            <route src="r15" dst="c20">
+                <link_ctn id="r15-c20"/>
+            </route>
+            <route src="r15" dst="c21">
+                <link_ctn id="r15-c21"/>
+            </route>
+            <route src="r15" dst="c22">
+                <link_ctn id="r15-c22"/>
+            </route>
+            <route src="r15" dst="c23">
+                <link_ctn id="r15-c23"/>
+            </route>
+            <route src="r16" dst="c24">
+                <link_ctn id="r16-c24"/>
+            </route>
+            <route src="r16" dst="c25">
+                <link_ctn id="r16-c25"/>
+            </route>
+            <route src="r16" dst="c26">
+                <link_ctn id="r16-c26"/>
+            </route>
+            <route src="r16" dst="c27">
+                <link_ctn id="r16-c27"/>
+            </route>
+            <route src="r17" dst="c28">
+                <link_ctn id="r17-c28"/>
+            </route>
+            <route src="r17" dst="c29">
+                <link_ctn id="r17-c29"/>
+            </route>
+            <route src="r17" dst="c30">
+                <link_ctn id="r17-c30"/>
+            </route>
+            <route src="r17" dst="c31">
+                <link_ctn id="r17-c31"/>
+            </route>
+            <route src="r20" dst="r10">
+                <link_ctn id="r20-r10"/>
+            </route>
+            <route src="r20" dst="r11">
+                <link_ctn id="r20-r11"/>
+            </route>
+            <route src="r20" dst="r12">
+                <link_ctn id="r20-r12"/>
+            </route>
+            <route src="r20" dst="r13">
+                <link_ctn id="r20-r13"/>
+            </route>
+            <route src="r21" dst="r14">
+                <link_ctn id="r21-r14"/>
+            </route>
+            <route src="r21" dst="r15">
+                <link_ctn id="r21-r15"/>
+            </route>
+            <route src="r21" dst="r16">
+                <link_ctn id="r21-r16"/>
+            </route>
+            <route src="r21" dst="r17">
+                <link_ctn id="r21-r17"/>
+            </route>
+            <route src="r22" dst="r10">
+                <link_ctn id="r22-r10"/>
+            </route>
+            <route src="r22" dst="r11">
+                <link_ctn id="r22-r11"/>
+            </route>
+            <route src="r22" dst="r12">
+                <link_ctn id="r22-r12"/>
+            </route>
+            <route src="r22" dst="r13">
+                <link_ctn id="r22-r13"/>
+            </route>
+            <route src="r23" dst="r14">
+                <link_ctn id="r23-r14"/>
+            </route>
+            <route src="r23" dst="r15">
+                <link_ctn id="r23-r15"/>
+            </route>
+            <route src="r23" dst="r16">
+                <link_ctn id="r23-r16"/>
+            </route>
+            <route src="r23" dst="r17">
+                <link_ctn id="r23-r17"/>
+            </route>
+            <route src="r30" dst="r20">
+                <link_ctn id="r30-r20"/>
+            </route>
+            <route src="r30" dst="r21">
+                <link_ctn id="r30-r21"/>
+            </route>
+            <route src="r31" dst="r22">
+                <link_ctn id="r31-r22"/>
+            </route>
+            <route src="r31" dst="r23">
+                <link_ctn id="r31-r23"/>
+            </route>
+            <route src="r32" dst="r20">
+                <link_ctn id="r32-r20"/>
+            </route>
+            <route src="r32" dst="r21">
+                <link_ctn id="r32-r21"/>
+            </route>
+            <route src="r33" dst="r22">
+                <link_ctn id="r33-r22"/>
+            </route>
+            <route src="r33" dst="r23">
+                <link_ctn id="r33-r23"/>
+            </route>
+            <route src="router_master" dst="r30">
+                <link_ctn id="router_master-r30"/>
+            </route>
+            <route src="router_master" dst="r31">
+                <link_ctn id="router_master-r31"/>
+            </route>
+            <route src="router_master" dst="r32">
+                <link_ctn id="router_master-r32"/>
+            </route>
+            <route src="router_master" dst="r33">
+                <link_ctn id="router_master-r33"/>
+            </route>
+        </zone>
+        <cluster id="cluster_master" prefix="master_host" suffix="" radical="0-0" speed="100.0Mf" bw="125MBps" lat="50us" bb_bw="2.25GBps" bb_lat="500us">
+            <prop id="role" value="master"/>
+        </cluster>
+        <link id="backbone" bandwidth="1.25GBps" latency="500us"/>
+        <zoneRoute src="cluster_compute" dst="cluster_master" gw_src="router_master" gw_dst="master_hostcluster_master_router">
+            <link_ctn id="backbone"/>
+        </zoneRoute>
+    </zone>
+</platform>

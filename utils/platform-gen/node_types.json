@@ -1,0 +1,26 @@
+{
+    "TEST": {
+        "attributes": {
+            "speed": "10.0Gf, 9.0Gf"
+        },
+        "properties": [
+            { "id": "sleep_pstates", "value": "2:3:4"},
+            { "id": "wattage_per_state", "value": "4.0:8.0, 4.0:7.2, 1.0:1.0, 3.0:3.0, 3.0:3.0" },
+            { "id": "wattage_off", "value": "2.0" }
+        ]
+    },
+    "Node A": {
+        "id": "AAA",
+        "processors": [
+            { "type": "CPU", "model": "CPU", "number": "0"}
+        ],
+        "memory_gib": "64"
+    },
+    "Node B": {
+        "id": "BBB",
+        "processors": [
+            { "type": "CPU", "model": "CPU", "number": "1"}
+        ],
+        "memory_gib": "32"
+    }
+}
