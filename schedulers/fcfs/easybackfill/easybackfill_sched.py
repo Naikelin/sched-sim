@@ -2,11 +2,11 @@
 An Easy Backfill scheduler that care a little about topology.
 This scheduler consider job as rectangle.
 """
-
-from procset import ProcSet
-from sortedcontainers import SortedListWithKey
 import json
 import re
+from procset import ProcSet
+from sortedcontainers import SortedListWithKey
+
 
 from batsim.batsim import BatsimScheduler
 
