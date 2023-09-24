@@ -1,3 +1,8 @@
+"""
+An Easy Backfill scheduler that care a little about topology.
+This scheduler consider job as rectangle.
+"""
+
 from procset import ProcSet
 from sortedcontainers import SortedListWithKey
 import json
@@ -236,9 +241,15 @@ class Easybackfill_sched(BatsimScheduler):
     """
     An EASY backfill scheduler that schedule rectangles.
     """
-    def __init__(self, options):
-        super().__init__(options)
-        self.logger.info("Easy Backfilling with Dependencies init")
+
+    def onAfterBatsimInit(self):
+        self.listFreeSpace = FreeSpaceContainer(self.bs.nb_resources)
+
+        self.listRunningJob = SortedListWithKey(
+            key=lambda job: job.estimate_finish_time)
+        self.listWaitingJob = []
+        self.completedJobs = set()
+        self.listNotReadyJobs = []
         self.load_dependencies()
 
     def load_dependencies(self):
@@ -247,57 +258,61 @@ class Easybackfill_sched(BatsimScheduler):
         self.job_dependencies = {int(k): v for k, v in self.job_dependencies.items()}
 
     def job_is_ready(self, job):
+        """Check if all dependencies of the job have been completed."""
+        # Extraer el ID del trabajo usando regex
         match = re.search(r'!(\d+)$', job.id)
         if not match:
-            self.logger.warning(f"Job {job.id} does not have the expected format.")
-            return False
+            print(f"Job {job.id} does not have the expected format.")
+            return False  # Si no se encuentra el formato esperado, considerar que el trabajo no está listo
             
-        job_id = int(match.group(1))
-        if job_id in self.job_dependencies:
-            dependencies_met = all(dep in self.completed_jobs for dep in self.job_dependencies[job_id])
-            return dependencies_met
-        return True
+        job_id = int(match.group(1))  # Convertir el ID extraído a entero
 
-    def onAfterBatsimInit(self):
-        self.listFreeSpace = FreeSpaceContainer(self.bs.nb_resources)
-        self.listRunningJob = SortedListWithKey(key=lambda job: job.estimate_finish_time)
-        self.listWaitingJob = []
-        self.completed_jobs = set()  # Initialize the set of completed jobs
+        # Verificar si el trabajo tiene dependencias en el atributo 'job_dependencies'
+        if job_id in self.job_dependencies:
+            dependencies_not_met = [dep for dep in self.job_dependencies[job_id] if dep not in self.completed_jobs]
+
+            return len(dependencies_not_met) == 0
+
+        return True  # Si el trabajo no tiene dependencias en 'job_dependencies', considerarlo listo
 
     def onJobSubmission(self, just_submitted_job):
         if just_submitted_job.requested_resources > self.bs.nb_compute_resources:
-            self.bs.reject_jobs([just_submitted_job])
+            self.bs.reject_jobs([just_submitted_job]) # This job requests more resources than the machine has
         else:
             current_time = self.bs.time()
-            self.listWaitingJob.append(just_submitted_job)
+            if self.job_is_ready(just_submitted_job):
+                self.listWaitingJob.append(just_submitted_job)
+            else:
+                self.listNotReadyJobs.append(just_submitted_job)
+            # if (self.cpu_snapshot.free_processors_available_at(current_time) >=
+            # just_submitted_job.requested_resources):
             self._schedule_jobs(current_time)
 
-    def onJobCompletion(self, job):
-        current_time = self.bs.time()
-        self.listFreeSpace.unassignJob(job)
-        self._removeAjobFromRunningJob(job)
-        job.finish_time = current_time
+    def _check_dependencies(self):
+        jobs_to_move = [job for job in self.listNotReadyJobs if self.job_is_ready(job)]
+        for job in jobs_to_move:
+            self.listNotReadyJobs.remove(job)
+            self.listWaitingJob.append(job)
+
+
+    def _add_to_completed_jobs(self, job):
         match = re.search(r'!(\d+)$', job.id)
         if match:
             numeric_job_id = int(match.group(1))
             self.completed_jobs.add(numeric_job_id)
-        self._schedule_jobs(current_time)
+        else:
+            print(f"Warning: Job ID {job.id} does not have the expected format.")
+        
+    def onJobCompletion(self, job):
+        current_time = self.bs.time()
 
-    def _schedule_jobs(self, current_time):
-        allocs = []
-        while len(self.listWaitingJob) > 0:
-            job = self.listWaitingJob[0]
-            if not self.job_is_ready(job):
-                break
-            alloc = self.allocJobFCFS(job, current_time)
-            if alloc is None:
-                break
-            self.listWaitingJob.pop(0)
-            job.start_time = current_time
-            job.estimate_finish_time = job.requested_time + job.start_time
-            self.listRunningJob.add(job)
-            allocs.append((job, alloc))
-        return allocs
+        self.listFreeSpace.unassignJob(job)
+        self._removeAjobFromRunningJob(job)
+        job.finish_time = current_time
+
+        self._add_to_completed_jobs(job)
+        self._check_dependencies(job)
+        self._schedule_jobs(current_time)
 
     def _removeAjobFromRunningJob(self, job):
         # because we use "key", .remove does not work as intended

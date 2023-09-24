@@ -13,7 +13,7 @@ class JobGenerator:
     def add_job(self, profile_name, subtime=0):
         profile = self.profiles[profile_name]
         resources_required = profile.get('np', 1)
-        walltime=profile.get('walltime', (2 * (60 * 60 * 24)))
+        walltime=profile.get('walltime', (6 * (60 * 60 * 24)))
         self.graph.add_node(self.job_count, 
                             profile=profile_name, 
                             subtime=subtime, 
@@ -111,7 +111,7 @@ class JobGenerator:
                     # Asignar propiedades al nodo
                     node_data = {
                         'profile': profile_name,
-                        'walltime': profile.get('walltime', 2 * 60 * 60),  # Default a 2 horas si no se especifica
+                        #'walltime': profile.get('walltime', 2 * 60 * 60),  # Default a 2 horas si no se especifica
                         'subtime': current_time,
                         'resources_required': profile.get('np', 1)  # Default a 1 si no se especifica
                     }
@@ -141,14 +141,14 @@ class JobGenerator:
             job_info = self.graph.nodes[node]
             
             # Fetch the correct walltime for the profile of the job
-            walltime = self.profiles[job_info['profile']]['walltime']
+            #walltime = self.profiles[job_info['profile']]['walltime']
 
             job = {
                 "id": node,
                 "profile": job_info['profile'],
                 "res": job_info['resources_required'],
                 "subtime": job_info['subtime'],
-                "walltime": job_info['walltime']
+                #"walltime": job_info['walltime']
             }
 
             # Handling dependencies

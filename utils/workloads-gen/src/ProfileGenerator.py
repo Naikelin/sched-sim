@@ -9,8 +9,8 @@ MID_CPU_MAX = 5e9
 HIGH_CPU_MAX = 1e11
 
 LOW_COM_MAX = 1e6
-MID_COM_MAX = 5e9
-HIGH_COM_MAX = 1e11
+MID_COM_MAX = 1e8
+HIGH_COM_MAX = 1e9
 
 class ProfileGenerator:
     
