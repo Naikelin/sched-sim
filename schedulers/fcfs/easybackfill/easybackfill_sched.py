@@ -253,7 +253,7 @@ class Easybackfill_sched(BatsimScheduler):
         self.load_dependencies()
 
     def load_dependencies(self):
-        with open("/home/nk/memoria/sched-sim/workloads/workload_dependencies.json", "r") as file:
+        with open("/home/nk/sched-sim/workloads/workload_dependencies.json", "r") as file:
             self.job_dependencies = json.load(file)
         self.job_dependencies = {int(k): v for k, v in self.job_dependencies.items()}
 
@@ -269,7 +269,7 @@ class Easybackfill_sched(BatsimScheduler):
 
         # Verificar si el trabajo tiene dependencias en el atributo 'job_dependencies'
         if job_id in self.job_dependencies:
-            dependencies_not_met = [dep for dep in self.job_dependencies[job_id] if dep not in self.completed_jobs]
+            dependencies_not_met = [dep for dep in self.job_dependencies[job_id] if dep not in self.completedJobs]
 
             return len(dependencies_not_met) == 0
 
@@ -288,7 +288,7 @@ class Easybackfill_sched(BatsimScheduler):
             # just_submitted_job.requested_resources):
             self._schedule_jobs(current_time)
 
-    def _check_dependencies(self):
+    def _check_dependencies(self, job):
         jobs_to_move = [job for job in self.listNotReadyJobs if self.job_is_ready(job)]
         for job in jobs_to_move:
             self.listNotReadyJobs.remove(job)
@@ -299,7 +299,7 @@ class Easybackfill_sched(BatsimScheduler):
         match = re.search(r'!(\d+)$', job.id)
         if match:
             numeric_job_id = int(match.group(1))
-            self.completed_jobs.add(numeric_job_id)
+            self.completedJobs.add(numeric_job_id)
         else:
             print(f"Warning: Job ID {job.id} does not have the expected format.")
         

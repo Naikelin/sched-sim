@@ -12,7 +12,7 @@ class Fcfs_sched(BatsimScheduler):
         self.logger.info("FCFS with Dependencies init")
 
     def load_dependencies(self):
-        with open("/home/nk/memoria/sched-sim/workloads/workload_dependencies.json", "r") as file:
+        with open("/home/nk/sched-sim/workloads/workload_dependencies.json", "r") as file:
             self.job_dependencies = json.load(file)
             
         self.job_dependencies = {int(k): v for k, v in self.job_dependencies.items()}
