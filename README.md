@@ -11,3 +11,9 @@ Para activar el ambiente de python3.8
 ```
 ./scripts/activate-3.8.sh
 ```
+
+# Graphviz
+
+```
+sudo apt install python3-dev graphviz libgraphviz-dev pkg-config 
+```
