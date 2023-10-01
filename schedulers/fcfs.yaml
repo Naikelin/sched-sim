@@ -1,0 +1,7 @@
+batcmd: batsim -p platforms/small_platform.xml -w workloads/workload.json -e output/fcfs/fcfs
+failure-timeout: 5
+output-dir: output/fcfs/fcfs
+ready-timeout: 10
+schedcmd: python -m pybatsim --options-file configs/fcfs.json schedulers/others/AllocOnly_sched.py
+simulation-timeout: 604800
+success-timeout: 3600
