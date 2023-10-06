@@ -1,6 +1,6 @@
 import re
 
-from .free_space_container import FreeSpaceContainer
+from free_space_container import FreeSpaceContainer
 from procset import ProcSet
 from sortedcontainers import SortedListWithKey
 from pybatsim.batsim.batsim import BatsimScheduler

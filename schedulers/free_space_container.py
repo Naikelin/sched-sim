@@ -1,4 +1,4 @@
-from .free_space import FreeSpace
+from free_space import FreeSpace
 
 INFINITY = float('inf')
 

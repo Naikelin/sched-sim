@@ -111,7 +111,7 @@ class JobGenerator:
                     # Asignar propiedades al nodo
                     node_data = {
                         'profile': profile_name,
-                        #'walltime': profile.get('walltime', 2 * 60 * 60),  # Default a 2 horas si no se especifica
+                        'walltime': (6 * 60 * 60),  # Default a 6 horas si no se especifica
                         'subtime': current_time,
                         'resources_required': profile.get('np', 1)  # Default a 1 si no se especifica
                     }
@@ -148,7 +148,7 @@ class JobGenerator:
                 "profile": job_info['profile'],
                 "res": job_info['resources_required'],
                 "subtime": job_info['subtime'],
-                #"walltime": job_info['walltime']
+                "walltime": job_info['walltime']
             }
 
             # Handling dependencies

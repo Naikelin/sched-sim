@@ -1,26 +1,31 @@
 {
-    "TEST": {
-        "attributes": {
-            "speed": "10.0Gf, 9.0Gf"
-        },
+    "node_A": {
+        "_coment": [
+            "pstate values:",
+            "* 0-2: real pstates",
+            "0: p1 100 MFlops/s, [idle: 95W -> full burning: 200W]",
+            "1: p2  50 MFlops/s, [idle: 93W -> full burning: 170W]",
+            "2: p3  20 MFlops/s, [idel: 90W -> full burning: 150W]"
+        ],
+        "attributes": { "speed": "100.0Mf,50.0Mf,20.0Mf", "pstate": "0" },
         "properties": [
-            { "id": "sleep_pstates", "value": "2:3:4"},
-            { "id": "wattage_per_state", "value": "4.0:8.0, 4.0:7.2, 1.0:1.0, 3.0:3.0, 3.0:3.0" },
+            { "id": "wattage_per_state", "value": "95.0:200.0,93.0:170.0,90.0:150.0" },
             { "id": "wattage_off", "value": "2.0" }
         ]
     },
-    "Node A": {
-        "id": "AAA",
-        "processors": [
-            { "type": "CPU", "model": "CPU", "number": "0"}
-        ],
-        "memory_gib": "64"
+    "node_B": {
+        "attributes": { "speed": "10.0Gf, 0.05f", "pstate": "0" },
+        "properties": [
+            { "id": "wattage_per_state", "value": "10.0:100.0:7.0, 9.75:5:7.25" },
+            { "id": "wattage_off", "value": "2.0" }
+        ]
     },
-    "Node B": {
-        "id": "BBB",
-        "processors": [
-            { "type": "CPU", "model": "CPU", "number": "1"}
-        ],
-        "memory_gib": "32"
+    "node_C": {
+        "attributes": { "speed": "20.4Gf, 18.36Gf, 16.32Gf, 14.28Gf, 12.24Gf, 0.0Gf, 0.0Gf, 0.0Gf", "pstate": "0" },
+        "properties": [
+            { "id": "sleep_pstates", "value": "5:6:7"},
+            { "id": "wattage_per_state", "value": "5.0:14.375, 5.0:12.9375, 5.0:11.5, 5.0:10.0625, 5.0:8.625, 2.0:2.0, 7.0:7.0, 6.0:6.0" },
+            { "id": "wattage_off", "value": "2.0" }
+        ]
     }
 }

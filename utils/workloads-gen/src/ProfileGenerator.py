@@ -37,14 +37,16 @@ class ProfileGenerator:
         
         return resources
     
-    def compute_walltime(self, cpu, com, np_val):
+    def compute_walltime(self, cpu, com, np_val, scale_factor=2200):
+        if np_val <= 0:
+            raise ValueError("np_val debe ser un número positivo.")
+        
         # Factor base de tiempo proporcional a la suma de CPU y COM
         base_time = (cpu + com) / (HIGH_CPU_MAX + HIGH_COM_MAX)
-        
+            
         # Ajustar el factor base de tiempo por la cantidad de recursos
-        # Aquí, 3600 es un factor de escala para convertir el valor en segundos (puede ajustarse según las necesidades)
-        walltime = base_time * 3600 / np_val
-        
+        walltime = base_time * scale_factor / np_val
+            
         return walltime
 
     def generate_profile(self, cpu_range, com_range, profile_prefix):
