@@ -64,6 +64,7 @@ class AllocOnly_sched(BatsimScheduler):
         algorithm = self.algorithm.lower()
         switcher = {
             'fcfs': self._scheduler_FCFS,
+            'sjf': self._scheduler_SJF,
             'easy-backfill': self._scheduler_EASY_Backfill,
             }
         
@@ -79,6 +80,7 @@ class AllocOnly_sched(BatsimScheduler):
         algorithm = self.algorithm.lower()
         switcher = {
             'fcfs': self._schedule_FCFS,
+            'sjf': self._schedule_SJF,
             'easy-backfill': self._schedule_EASY_Backfill,
             }
         
@@ -125,6 +127,59 @@ class AllocOnly_sched(BatsimScheduler):
                 alloc = self.listFreeSpace.assignJob(l, job, current_time)
                 return alloc
         return None
+    
+    """ -------------------
+            SJF
+    ------------------- """
+    
+    def _scheduler_SJF(self, job):
+        """ if dependencies are not met, add to queued not ready jobs """
+        if not self._check_if_can_schedule(job):
+            self.queuedJobsNotReady.append(job)
+        else:
+            """ if job is ready, add on queued jobs sorted by requested time """
+            self._insert_sorted_by_duration(job)
+
+        """ schedule jobs """
+        self._schedule_SJF()
+
+    def _schedule_SJF(self):
+        current_time = self.bs.time()
+        allocs = self.allocJobSJF(current_time)
+        
+        if len(allocs) > 0:
+            jobs = []
+            for (job, (first_res, last_res)) in allocs:
+                job.allocation = ProcSet((first_res, last_res))
+                jobs.append(job)
+            print(f"[SCHEDULED] Schedule jobs: {jobs}")
+            self.bs.execute_jobs(jobs)
+
+    def _insert_sorted_by_duration(self, job):
+        """ Insert job into queuedJobs in a sorted manner (shortest jobs first) """
+        index = 0
+        while index < len(self.queuedJobs) and self.queuedJobs[index].requested_time <= job.requested_time:
+            index += 1
+        self.queuedJobs.insert(index, job)
+
+
+    def allocJobSJF(self, current_time):
+        """ Assign resources to the shortest job available in queuedJobs. """
+        
+        if not self.queuedJobs:
+            return None
+
+        # Get the shortest job (the first one in queuedJobs).
+        shortest_job = self.queuedJobs[0]
+        
+        for l in self.listFreeSpace.generator():
+            if shortest_job.requested_resources <= l.res and shortest_job.requested_time <= l.length:
+                alloc = self.assignJob(l, shortest_job, current_time)
+                self.queuedJobs.pop(0)
+                return [(shortest_job, alloc)]
+        
+        return None
+
     
     """ -------------------
         EASY-Backfill
@@ -342,6 +397,7 @@ class AllocOnly_sched(BatsimScheduler):
 
     def onJobSubmission(self, job):    
         print (f"[SUBMIT] {job}")
+        self.calculateRequestedTime(job)
         self._scheduler(job)
 
     def onJobCompletion(self, job):
