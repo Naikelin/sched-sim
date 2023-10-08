@@ -5,6 +5,8 @@ from procset import ProcSet
 from sortedcontainers import SortedListWithKey
 from pybatsim.batsim.batsim import BatsimScheduler
 
+from sim_with_q import SimWithQ
+
 INFINITY = float("inf")
 
 class AllocOnly_sched(BatsimScheduler):
@@ -397,7 +399,8 @@ class AllocOnly_sched(BatsimScheduler):
 
     def onJobSubmission(self, job):    
         print (f"[SUBMIT] {job}")
-        self.calculateRequestedTime(job)
+        if len(self.queuedJobs) > 20:
+            self.hill_climbing_optimize()
         self._scheduler(job)
 
     def onJobCompletion(self, job):
@@ -445,3 +448,44 @@ class AllocOnly_sched(BatsimScheduler):
             if d in self.rejectedJobs:
                 return True
         return False
+    
+    """ -------------------
+            Optimizers
+    ------------------- """
+    
+    def hill_climbing_optimize(self):
+        """Optimize the order of jobs in queuedJobs using Hill Climbing."""
+        current_solution = self.queuedJobs[:]
+        current_quality = self.evaluate_solution(current_solution)
+
+        improved = True
+        while improved:
+            improved = False
+            neighbors = self.generate_neighbors(current_solution)
+
+            for neighbor in neighbors:
+                quality = self.evaluate_solution(neighbor)
+                if quality < current_quality:
+                    current_quality = quality
+                    current_solution = neighbor
+                    improved = True
+                    break
+
+        self.queuedJobs = current_solution
+
+    def evaluate_solution(self, solution):
+        """Evaluate the quality of a solution using the JobSchedulerSimulator."""
+        simulator = SimWithQ(self.listFreeSpace, solution)
+        total_completion_time = simulator.simulate()
+        
+        return total_completion_time
+
+    def generate_neighbors(self, solution):
+        """Generate neighboring solutions by swapping two jobs."""
+        neighbors = []
+        for i in range(len(solution)):
+            for j in range(i+1, len(solution)):
+                neighbor = solution[:]
+                neighbor[i], neighbor[j] = neighbor[j], neighbor[i]
+                neighbors.append(neighbor)
+        return neighbors
