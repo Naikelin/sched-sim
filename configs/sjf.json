@@ -1,7 +1,7 @@
 {
     "platform": "platforms/small_platform.yaml",
-    "algorithm": "EASY-BACKFILL",
+    "algorithm": "SJF",
     "progress_bar": true,
-    "priority_policy": "fcfs",
+    "priority_policy": "sjf",
     "optimisation": false
   }

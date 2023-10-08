@@ -1,5 +1,5 @@
 {
-    "platform": "platforms/fat_tree.yaml",
+    "platform": "platforms/small_platform.yaml",
     "algorithm": "FCFS",
     "progress_bar": true,
     "priority_policy": "fcfs",

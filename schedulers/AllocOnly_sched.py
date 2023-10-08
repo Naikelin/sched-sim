@@ -122,13 +122,6 @@ class AllocOnly_sched(BatsimScheduler):
                 jobs.append(job)
             print(f"[SCHEDULED] Schedule jobs: {jobs}")
             self.bs.execute_jobs(jobs)
-
-    def allocJobFCFS(self, job, current_time):
-        for l in self.listFreeSpace.generator():
-            if job.requested_resources <= l.res:
-                alloc = self.listFreeSpace.assignJob(l, job, current_time)
-                return alloc
-        return None
     
     """ -------------------
             SJF
@@ -147,7 +140,7 @@ class AllocOnly_sched(BatsimScheduler):
 
     def _schedule_SJF(self):
         current_time = self.bs.time()
-        allocs = self.allocJobSJF(current_time)
+        allocs = self.allocHeadOfList(current_time)
         
         if len(allocs) > 0:
             jobs = []
@@ -163,25 +156,6 @@ class AllocOnly_sched(BatsimScheduler):
         while index < len(self.queuedJobs) and self.queuedJobs[index].requested_time <= job.requested_time:
             index += 1
         self.queuedJobs.insert(index, job)
-
-
-    def allocJobSJF(self, current_time):
-        """ Assign resources to the shortest job available in queuedJobs. """
-        
-        if not self.queuedJobs:
-            return None
-
-        # Get the shortest job (the first one in queuedJobs).
-        shortest_job = self.queuedJobs[0]
-        
-        for l in self.listFreeSpace.generator():
-            if shortest_job.requested_resources <= l.res and shortest_job.requested_time <= l.length:
-                alloc = self.assignJob(l, shortest_job, current_time)
-                self.queuedJobs.pop(0)
-                return [(shortest_job, alloc)]
-        
-        return None
-
     
     """ -------------------
         EASY-Backfill
@@ -216,9 +190,6 @@ class AllocOnly_sched(BatsimScheduler):
             self.bs.execute_jobs(jobs)
 
     def allocJobBackfill(self, job, current_time):
-        """
-        The same as algo as allocJobFCFS BUT we check for the length of the job because there can be a reservation (the "firstjob" of the backfilling).
-        """
         for l in self.listFreeSpace.generator():
             if job.requested_resources <= l.res and job.requested_time <= l.length:
                 alloc = self.listFreeSpace.assignJob(l, job, current_time)
