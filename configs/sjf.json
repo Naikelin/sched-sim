@@ -2,6 +2,5 @@
     "platform": "platforms/small_platform.yaml",
     "algorithm": "SJF",
     "progress_bar": true,
-    "priority_policy": "sjf",
     "optimisation": false
   }

@@ -21,8 +21,7 @@ class AllocOnly_sched(BatsimScheduler):
         # Options from config file
         self.platform = self.options['platform']
         self.algorithm = self.options['algorithm']
-        self.priority_policy = self.options['priority_policy']
-        self.optimisation = self.options['optimisation']
+        self.optimisation : bool = self.options['optimisation']
         self.progress_bar = self.options['progress_bar']
 
         # Scheduling variables
@@ -122,6 +121,13 @@ class AllocOnly_sched(BatsimScheduler):
                 jobs.append(job)
             print(f"[SCHEDULED] Schedule jobs: {jobs}")
             self.bs.execute_jobs(jobs)
+
+    def allocJobFCFS(self, job, current_time):
+        for l in self.listFreeSpace.generator():
+            if job.requested_resources <= l.res:
+                alloc = self.listFreeSpace.assignJob(l, job, current_time)
+                return alloc
+        return None
     
     """ -------------------
             SJF
@@ -134,6 +140,9 @@ class AllocOnly_sched(BatsimScheduler):
         else:
             """ if job is ready, add on queued jobs sorted by requested time """
             self._insert_sorted_by_duration(job)
+
+        if self.optimisation:
+            self.hill_climbing_optimize()
 
         """ schedule jobs """
         self._schedule_SJF()
@@ -370,8 +379,6 @@ class AllocOnly_sched(BatsimScheduler):
 
     def onJobSubmission(self, job):    
         print (f"[SUBMIT] {job}")
-        if len(self.queuedJobs) > 20:
-            self.hill_climbing_optimize()
         self._scheduler(job)
 
     def onJobCompletion(self, job):

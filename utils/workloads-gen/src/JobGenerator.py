@@ -111,9 +111,9 @@ class JobGenerator:
                     # Asignar propiedades al nodo
                     node_data = {
                         'profile': profile_name,
-                        'walltime': (6 * 60 * 60),  # Default a 6 horas si no se especifica
+                        'walltime': profile.get('walltime', (6 * (60 * 60 * 24))),
                         'subtime': current_time,
-                        'resources_required': profile.get('np', 1)  # Default a 1 si no se especifica
+                        'resources_required': profile.get('np', 1)
                     }
                     
                     self.graph.add_node(node + offset, **node_data)

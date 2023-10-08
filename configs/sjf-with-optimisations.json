@@ -1,6 +1,6 @@
 {
     "platform": "platforms/small_platform.yaml",
-    "algorithm": "EASY-BACKFILL",
+    "algorithm": "SJF",
     "progress_bar": true,
-    "optimisation": false
+    "optimisation": true
   }
