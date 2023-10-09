@@ -1,10 +1,14 @@
+# python imports
 import re
 
+# external imports
+from scipy.optimize import dual_annealing
+
+# internal imports
 from free_space_container import FreeSpaceContainer
 from procset import ProcSet
 from sortedcontainers import SortedListWithKey
 from pybatsim.batsim.batsim import BatsimScheduler
-
 from sim_with_q import SimWithQ
 
 INFINITY = float("inf")
@@ -21,7 +25,8 @@ class AllocOnly_sched(BatsimScheduler):
         # Options from config file
         self.platform = self.options['platform']
         self.algorithm = self.options['algorithm']
-        self.optimisation : bool = self.options['optimisation']
+        self.optimisation : bool = self.options.get('optimisation', False)
+        self.optimisation_type = self.options.get('optimisation_type', '')
         self.progress_bar = self.options['progress_bar']
 
         # Scheduling variables
@@ -93,6 +98,21 @@ class AllocOnly_sched(BatsimScheduler):
         # Execute the function
         return func()
     
+    def _optimizer(self):
+        algorithm = self.optimisation_type.lower()
+        switcher = {
+            'hill-climbing': self.hill_climbing_optimize,
+            'simulated-annealing': self.simulated_annealing_optimize,
+            }
+        
+        # Get the function from switcher dictionary
+        func = switcher.get(algorithm)
+        if func is None:
+            raise ValueError(f"Invalid algorithm: {algorithm}")
+        
+        # Execute the function
+        return func()
+    
     """ -------------------
             FCFS
     ------------------- """
@@ -107,9 +127,6 @@ class AllocOnly_sched(BatsimScheduler):
             #print(f"Job {job.id} on queued jobs")
             self.queuedJobs.append(job)
 
-        """ schedule jobs """
-        self._schedule()
-    
     def _schedule_FCFS(self):
         current_time = self.bs.time()
         allocs = self.allocHeadOfList(current_time)
@@ -140,12 +157,6 @@ class AllocOnly_sched(BatsimScheduler):
         else:
             """ if job is ready, add on queued jobs sorted by requested time """
             self._insert_sorted_by_duration(job)
-
-        if self.optimisation:
-            self.hill_climbing_optimize()
-
-        """ schedule jobs """
-        self._schedule_SJF()
 
     def _schedule_SJF(self):
         current_time = self.bs.time()
@@ -178,9 +189,6 @@ class AllocOnly_sched(BatsimScheduler):
             """ if job is ready, add on queued jobs it """
             #print(f"Job {job.id} on queued jobs")
             self.queuedJobs.append(job)
-
-        """ schedule jobs """
-        self._schedule()
 
     def _schedule_EASY_Backfill(self):
         current_time = self.bs.time()
@@ -380,6 +388,14 @@ class AllocOnly_sched(BatsimScheduler):
     def onJobSubmission(self, job):    
         print (f"[SUBMIT] {job}")
         self._scheduler(job)
+        
+        if self.optimisation:
+            """ optimize jobs """
+            self._optimizer()
+
+        """ schedule jobs """
+        self._schedule()
+    
 
     def onJobCompletion(self, job):
         print (f"[COMPLETED] {job}")
@@ -467,3 +483,35 @@ class AllocOnly_sched(BatsimScheduler):
                 neighbor[i], neighbor[j] = neighbor[j], neighbor[i]
                 neighbors.append(neighbor)
         return neighbors
+
+    def simulated_annealing_optimize(self):
+        """Optimize the order of jobs in queuedJobs using Dual Annealing."""
+        if len(self.queuedJobs) < 2:
+            return
+
+        # Definir la función objetivo para el optimizador
+        def objective(order):
+            # Convertir los valores continuos a un orden de trabajos
+            sorted_order = sorted(range(len(order)), key=lambda k: order[k])
+            solution = [self.queuedJobs[i] for i in sorted_order]
+            return self.evaluate_solution(solution)
+
+        # Definir los límites para el optimizador
+        num_jobs = len(self.queuedJobs)
+        bounds = [(0, 1) for _ in range(num_jobs)]
+
+        # Initial solution (current order)
+        init_solution = list(range(num_jobs))
+
+        # Aplicar el dual annealing
+        result = dual_annealing(
+            objective,
+            bounds=bounds,
+            x0=init_solution,
+            maxiter=500,  # Puedes ajustar este valor según tus necesidades
+            seed=42  # Fijando una semilla para reproducibilidad
+        )
+
+        # Actualizar queuedJobs con la solución óptima
+        sorted_order = sorted(range(len(result.x)), key=lambda k: result.x[k])
+        self.queuedJobs = [self.queuedJobs[i] for i in sorted_order]

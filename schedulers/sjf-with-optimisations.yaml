@@ -1,7 +1,0 @@
-batcmd: batsim -p platforms/small_platform.xml -w workloads/workload.json -e output/sjf-with-optimisations/sjf-with-optimisations
-failure-timeout: 5
-output-dir: output/sjf-with-optimisations/sjf-with-optimisations
-ready-timeout: 10
-schedcmd: python -m pybatsim --options-file configs/sjf-with-optimisations.json schedulers/AllocOnly_sched.py
-simulation-timeout: 604800
-success-timeout: 3600
