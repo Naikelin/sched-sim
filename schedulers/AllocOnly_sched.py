@@ -3,6 +3,8 @@ import re
 
 # external imports
 from scipy.optimize import dual_annealing
+import pyswarms as ps
+import numpy as np
 
 # internal imports
 from free_space_container import FreeSpaceContainer
@@ -103,6 +105,7 @@ class AllocOnly_sched(BatsimScheduler):
         switcher = {
             'hill-climbing': self.hill_climbing_optimize,
             'simulated-annealing': self.simulated_annealing_optimize,
+            'pso': self.pso_optimize,
             }
         
         # Get the function from switcher dictionary
@@ -508,10 +511,39 @@ class AllocOnly_sched(BatsimScheduler):
             objective,
             bounds=bounds,
             x0=init_solution,
-            maxiter=500,  # Puedes ajustar este valor según tus necesidades
-            seed=42  # Fijando una semilla para reproducibilidad
+            maxiter=500,
+            seed=42
         )
 
         # Actualizar queuedJobs con la solución óptima
         sorted_order = sorted(range(len(result.x)), key=lambda k: result.x[k])
         self.queuedJobs = [self.queuedJobs[i] for i in sorted_order]
+
+    def pso_optimize(self):
+        """Optimize the order of jobs in queuedJobs using Particle Swarm Optimization."""
+        
+        if len(self.queuedJobs) < 2:
+            return
+        
+        # Definir la función objetivo para el optimizador
+        def objective(order):
+            # Redondea y verifica los límites
+            rounded_order = np.round(order)  # Utiliza numpy para redondear cada elemento
+            print(rounded_order)
+            indices = [min(max(0, int(i)), len(self.queuedJobs)-1) for i in rounded_order.ravel()]
+            solution = [self.queuedJobs[idx] for idx in indices]
+            return self.evaluate_solution(solution)
+
+
+        # Definir los límites para el optimizador
+        num_jobs = len(self.queuedJobs)
+        bounds = (np.zeros(num_jobs), np.ones(num_jobs) * (num_jobs - 1))
+
+        # Configurar y ejecutar el PSO
+        options = {'c1': 0.5, 'c2': 0.3, 'w':0.9}
+        optimizer = ps.single.GlobalBestPSO(n_particles=10, dimensions=num_jobs, options=options, bounds=bounds)
+        cost, pos = optimizer.optimize(objective, iters=1000)  # Puedes ajustar iters según tus necesidades
+        
+        # Actualizar queuedJobs con la solución óptima
+        optimized_order = [int(i) for i in pos]
+        self.queuedJobs = [self.queuedJobs[i] for i in optimized_order]
