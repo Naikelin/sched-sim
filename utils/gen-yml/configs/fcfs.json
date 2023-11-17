@@ -1,0 +1,7 @@
+{
+    "platform": "platforms/small_platform.yaml",
+    "algorithm": "FCFS",
+    "progress_bar": true,
+    "optimisation": false,
+    "optimisation_type": ""
+}

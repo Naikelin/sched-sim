@@ -1,0 +1,7 @@
+{
+    "platform": "platforms/small_platform.yaml",
+    "algorithm": "FCFS",
+    "progress_bar": true,
+    "optimisation": true,
+    "optimisation_type": "hill-climbing"
+}

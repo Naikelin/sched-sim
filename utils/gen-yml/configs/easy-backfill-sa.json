@@ -1,0 +1,7 @@
+{
+    "platform": "platforms/small_platform.yaml",
+    "algorithm": "EASY-BACKFILL",
+    "progress_bar": true,
+    "optimisation": true,
+    "optimisation_type": "simulated-annealing"
+}
