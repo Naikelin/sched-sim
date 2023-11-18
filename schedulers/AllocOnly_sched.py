@@ -523,29 +523,28 @@ class AllocOnly_sched(BatsimScheduler):
 
     def pso_optimize(self):
         """Optimize the order of jobs in queuedJobs using Particle Swarm Optimization."""
-        
         if len(self.queuedJobs) < 2:
             return
-        
-        # Definir la función objetivo para el optimizador
-        def objective(order):
-            # Redondea y verifica los límites
-            rounded_order = np.round(order)  # Utiliza numpy para redondear cada elemento
-            print(rounded_order)
-            indices = [min(max(0, int(i)), len(self.queuedJobs)-1) for i in rounded_order.ravel()]
-            solution = [self.queuedJobs[idx] for idx in indices]
-            return self.evaluate_solution(solution)
 
+        # Función objetivo para el optimizador que utiliza la decodificación según la regla dada
+        def objective(order):
+            # No redondeamos, solo ordenamos el vector y obtenemos los índices de esta ordenación
+            order_indices = np.argsort(order, axis=1)
+            batch_costs = []
+            for index_order in order_indices:
+                solution = [self.queuedJobs[idx] for idx in index_order]
+                batch_costs.append(self.evaluate_solution(solution))
+            return np.array(batch_costs)
 
         # Definir los límites para el optimizador
         num_jobs = len(self.queuedJobs)
-        bounds = (np.zeros(num_jobs), np.ones(num_jobs) * (num_jobs - 1))
+        bounds = (np.zeros(num_jobs), np.ones(num_jobs))
 
         # Configurar y ejecutar el PSO
         options = {'c1': 0.5, 'c2': 0.3, 'w':0.9}
         optimizer = ps.single.GlobalBestPSO(n_particles=10, dimensions=num_jobs, options=options, bounds=bounds)
-        cost, pos = optimizer.optimize(objective, iters=1000)  # Puedes ajustar iters según tus necesidades
-        
-        # Actualizar queuedJobs con la solución óptima
-        optimized_order = [int(i) for i in pos]
+        cost, pos = optimizer.optimize(objective, iters=1000)
+
+        # Actualizar queuedJobs con la solución óptima utilizando la decodificación dada
+        optimized_order = np.argsort(pos)
         self.queuedJobs = [self.queuedJobs[i] for i in optimized_order]

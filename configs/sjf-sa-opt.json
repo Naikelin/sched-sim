@@ -4,5 +4,7 @@
     "progress_bar": true,
     "optimisation": true,
     "optimisation_type": "simulated-annealing",
-    "no_local_search": false
+    "optimisation_confs": {
+        "no_local_search": true
+    }
 }

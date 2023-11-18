@@ -17,12 +17,16 @@ success-timeout: 3600
         "algorithm": "",
         "progress_bar": True,
         "optimisation": False,
-        "optimisation_type": ""
+        "optimisation_type": "",
+        "optimisation_confs": {
+            "no_local_search": False
+        }
     }
 
     optimization_switcher = {
         'hc': 'hill-climbing',
         'sa': 'simulated-annealing',
+        'sa-opt': 'simulated-annealing-optimized',
         'pso': 'pso'
     }
 
@@ -52,6 +56,10 @@ success-timeout: 3600
             json_content["optimisation"] = bool(opt)
             json_content["optimisation_type"] = optimization_switcher.get(opt, "")
 
+            # If the optimization is "sa-opt", set "no_local_search" to True
+            if opt == "sa-opt":
+                json_content["optimisation_confs"]["no_local_search"] = True
+
             json_file_name = f"{alg}{opt_suffix}.json"
             # Write the JSON content to the file
             with open(f'configs/{json_file_name}', 'w') as json_file:
@@ -59,10 +67,11 @@ success-timeout: 3600
 
 # Define the algorithms and optimizations
 algorithms = ['fcfs', 'sjf', 'easy-backfill']
-optimizations = ['hc', 'sa', 'pso', '']
+optimizations = ['hc', 'sa', 'sa-opt', 'pso', '']
 
 # Call the function to generate the configurations
 generate_configs(algorithms, optimizations)
 
 # Inform the user that the files have been created
 print("YAML and JSON configurations have been generated in the 'output' and 'configs' directories respectively.")
+

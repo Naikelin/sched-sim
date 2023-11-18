@@ -3,5 +3,8 @@
     "algorithm": "SJF",
     "progress_bar": true,
     "optimisation": false,
-    "optimisation_type": ""
+    "optimisation_type": "",
+    "optimisation_confs": {
+        "no_local_search": true
+    }
 }
