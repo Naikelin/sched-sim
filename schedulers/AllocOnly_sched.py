@@ -30,6 +30,7 @@ class AllocOnly_sched(BatsimScheduler):
         self.optimisation : bool = self.options.get('optimisation', False)
         self.optimisation_type = self.options.get('optimisation_type', '')
         self.progress_bar = self.options['progress_bar']
+        self.optimisation_confs = self.options.get('optimisation_confs', {})
 
         # Scheduling variables
         self.listFreeSpace = None
@@ -511,8 +512,9 @@ class AllocOnly_sched(BatsimScheduler):
             objective,
             bounds=bounds,
             x0=init_solution,
-            maxiter=500,
-            seed=42
+            maxiter=self.optimisation_confs.get('maxiter', 500),
+            no_local_search=self.optimisation_confs.get('no_local_search', False),
+            seed=self.optimisation_confs.get('seed', None),
         )
 
         # Actualizar queuedJobs con la solución óptima

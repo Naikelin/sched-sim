@@ -1,5 +1,5 @@
 #!/bin/bash
 
 for nombre in "$@"; do
-    docker run --rm -v "$(pwd)":/sched-sim sched-sim robin schedulers/$nombre.yaml
+    docker run --rm -v "$(pwd)":/sched-sim tanaxer/pybatsim robin schedulers/$nombre.yaml
 done

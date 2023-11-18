@@ -4,5 +4,5 @@
     "progress_bar": true,
     "optimisation": true,
     "optimisation_type": "simulated-annealing",
-    "no_local_search": true
+    "no_local_search": false
 }
