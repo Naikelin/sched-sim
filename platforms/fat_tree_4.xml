@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE platform
+  SYSTEM 'https://simgrid.org/simgrid.dtd'>
+<platform version="4.1">
+    <zone id="main" routing="Full">
+        <zone id="cluster_compute" routing="Full">
+            <host speed="98.095Mf" pstate="0" id="c0"/>
+            <host speed="76.296Mf" pstate="0" id="c1"/>
+            <host speed="48.492Mf" pstate="0" id="c2"/>
+            <host speed="48.492Mf" pstate="0" id="c3"/>
+            <router id="r10"/>
+            <router id="r11"/>
+            <router id="r20"/>
+            <router id="r21"/>
+            <router id="router_master"/>
+            <link bandwidth="1.25GBps" latency="500us" id="r20-r10-uplink0"/>
+            <link bandwidth="1.25GBps" latency="500us" id="r20-r10-downlink0"/>
+            <link bandwidth="1.25GBps" latency="500us" id="r10-c0-uplink0"/>
+            <link bandwidth="1.25GBps" latency="500us" id="r10-c0-downlink0"/>
+            <link bandwidth="1.25GBps" latency="500us" id="router_master-r20-uplink0"/>
+            <link bandwidth="1.25GBps" latency="500us" id="router_master-r20-downlink0"/>
+            <link bandwidth="1.25GBps" latency="500us" id="r21-r11-uplink0"/>
+            <link bandwidth="1.25GBps" latency="500us" id="r21-r11-downlink0"/>
+            <link bandwidth="1.25GBps" latency="500us" id="r21-r10-uplink0"/>
+            <link bandwidth="1.25GBps" latency="500us" id="r21-r10-downlink0"/>
+            <link bandwidth="1.25GBps" latency="500us" id="router_master-r21-uplink0"/>
+            <link bandwidth="1.25GBps" latency="500us" id="router_master-r21-downlink0"/>
+            <link bandwidth="1.25GBps" latency="500us" id="r11-c3-uplink0"/>
+            <link bandwidth="1.25GBps" latency="500us" id="r11-c3-downlink0"/>
+            <link bandwidth="1.25GBps" latency="500us" id="r20-r11-uplink0"/>
+            <link bandwidth="1.25GBps" latency="500us" id="r20-r11-downlink0"/>
+            <link bandwidth="1.25GBps" latency="500us" id="r11-c2-uplink0"/>
+            <link bandwidth="1.25GBps" latency="500us" id="r11-c2-downlink0"/>
+            <link bandwidth="1.25GBps" latency="500us" id="r10-c1-uplink0"/>
+            <link bandwidth="1.25GBps" latency="500us" id="r10-c1-downlink0"/>
+            <route src="r20" dst="r10">
+                <link_ctn id="r20-r10-uplink0"/>
+                <link_ctn id="r20-r10-downlink0"/>
+            </route>
+            <route src="r10" dst="c0">
+                <link_ctn id="r10-c0-uplink0"/>
+                <link_ctn id="r10-c0-downlink0"/>
+            </route>
+            <route src="router_master" dst="r20">
+                <link_ctn id="router_master-r20-uplink0"/>
+                <link_ctn id="router_master-r20-downlink0"/>
+            </route>
+            <route src="r21" dst="r11">
+                <link_ctn id="r21-r11-uplink0"/>
+                <link_ctn id="r21-r11-downlink0"/>
+            </route>
+            <route src="r21" dst="r10">
+                <link_ctn id="r21-r10-uplink0"/>
+                <link_ctn id="r21-r10-downlink0"/>
+            </route>
+            <route src="router_master" dst="r21">
+                <link_ctn id="router_master-r21-uplink0"/>
+                <link_ctn id="router_master-r21-downlink0"/>
+            </route>
+            <route src="r11" dst="c3">
+                <link_ctn id="r11-c3-uplink0"/>
+                <link_ctn id="r11-c3-downlink0"/>
+            </route>
+            <route src="r20" dst="r11">
+                <link_ctn id="r20-r11-uplink0"/>
+                <link_ctn id="r20-r11-downlink0"/>
+            </route>
+            <route src="r11" dst="c2">
+                <link_ctn id="r11-c2-uplink0"/>
+                <link_ctn id="r11-c2-downlink0"/>
+            </route>
+            <route src="r10" dst="c1">
+                <link_ctn id="r10-c1-uplink0"/>
+                <link_ctn id="r10-c1-downlink0"/>
+            </route>
+        </zone>
+        <cluster id="cluster_master" prefix="master_host" suffix="" radical="0-0" speed="100.0Mf" bw="125MBps" lat="50us" bb_bw="2.25GBps" bb_lat="500us">
+            <prop id="role" value="master"/>
+        </cluster>
+        <link id="backbone" bandwidth="1.25GBps" latency="500us"/>
+        <zoneRoute src="cluster_compute" dst="cluster_master" gw_src="router_master" gw_dst="master_hostcluster_master_router">
+            <link_ctn id="backbone"/>
+        </zoneRoute>
+    </zone>
+</platform>

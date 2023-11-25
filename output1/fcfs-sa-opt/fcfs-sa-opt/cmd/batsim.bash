@@ -1,0 +1,1 @@
+batsim -p platforms/small_platform.xml -w workloads/workload.json -e output/fcfs-sa-opt/fcfs-sa-opt

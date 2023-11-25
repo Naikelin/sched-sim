@@ -1,0 +1,37 @@
+{
+  "node_C1": {
+    "attributes": {
+      "speed": "1.5Gf",
+      "pstate": "0"
+    },
+    "properties": {}
+  },
+  "node_C2": {
+    "attributes": {
+      "speed": "3.0Gf",
+      "pstate": "0"
+    },
+    "properties": {}
+  },
+  "node_C3": {
+    "attributes": {
+      "speed": "1.5Gf",
+      "pstate": "0"
+    },
+    "properties": {}
+  },
+  "node_C4": {
+    "attributes": {
+      "speed": "2.0Gf",
+      "pstate": "0"
+    },
+    "properties": {}
+  },
+  "node_C5": {
+    "attributes": {
+      "speed": "1.5Gf",
+      "pstate": "0"
+    },
+    "properties": {}
+  }
+}

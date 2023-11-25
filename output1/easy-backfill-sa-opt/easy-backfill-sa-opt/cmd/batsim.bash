@@ -1,0 +1,1 @@
+batsim -p platforms/small_platform.xml -w workloads/workload.json -e output/easy-backfill-sa-opt/easy-backfill-sa-opt

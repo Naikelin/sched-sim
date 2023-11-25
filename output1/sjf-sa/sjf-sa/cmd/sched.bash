@@ -1,0 +1,1 @@
+python -m pybatsim --options-file configs/sjf-sa.json schedulers/AllocOnly_sched.py

@@ -1,4 +1,4 @@
-batcmd: batsim -p platforms/small_platform.xml -w workloads/workload.json -e output/sjf-sa/sjf-sa
+batcmd: batsim -p platforms/fat_tree_4.xml -w workloads/workload.json -e output/sjf-sa/sjf-sa
 failure-timeout: 5
 output-dir: output/sjf-sa/sjf-sa
 ready-timeout: 10

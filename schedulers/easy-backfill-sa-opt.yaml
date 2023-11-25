@@ -1,4 +1,4 @@
-batcmd: batsim -p platforms/small_platform.xml -w workloads/workload.json -e output/easy-backfill-sa-opt/easy-backfill-sa-opt
+batcmd: batsim -p platforms/fat_tree_4.xml -w workloads/workload.json -e output/easy-backfill-sa-opt/easy-backfill-sa-opt
 failure-timeout: 5
 output-dir: output/easy-backfill-sa-opt/easy-backfill-sa-opt
 ready-timeout: 10

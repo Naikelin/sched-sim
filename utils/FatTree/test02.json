@@ -1,0 +1,10 @@
+{
+  "nodes": [
+    { "type": "node_C1", "number": 1 },
+    { "type": "node_C2", "number": 1 },
+    { "type": "node_C3", "number": 1 },
+    { "type": "node_C4", "number": 1 }
+  ],
+  "cluster_network": "Network A",
+  "dc_network": "Network A"
+}

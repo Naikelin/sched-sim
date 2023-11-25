@@ -1,0 +1,1 @@
+batsim -p platforms/small_platform.xml -w workloads/workload.json -e output/sjf-sa-opt/sjf-sa-opt
