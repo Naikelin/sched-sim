@@ -1,0 +1,1 @@
+python -m pybatsim --options-file configs/fcfs-sa-opt.json schedulers/AllocOnly_sched.py

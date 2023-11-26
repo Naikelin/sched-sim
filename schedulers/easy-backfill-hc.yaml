@@ -1,6 +1,6 @@
-batcmd: batsim -p platforms/fat_tree_4.xml -w workloads/workload.json -e output/easy-backfill-hc/easy-backfill-hc
+batcmd: batsim -p platforms/fat_tree.xml -w workloads/workload.json -e output_fat_tree_16_w1/easy-backfill-hc/easy-backfill-hc
 failure-timeout: 5
-output-dir: output/easy-backfill-hc/easy-backfill-hc
+output-dir: output_fat_tree_16_w1/easy-backfill-hc/easy-backfill-hc
 ready-timeout: 10
 schedcmd: python -m pybatsim --options-file configs/easy-backfill-hc.json schedulers/AllocOnly_sched.py
 simulation-timeout: 604800
