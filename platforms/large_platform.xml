@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE platform
+  SYSTEM 'https://simgrid.org/simgrid.dtd'>
+<platform version="4.1">
+    <zone id="main" routing="Full">
+        <zone id="cluster_compute" routing="Full">
+            <host speed="350Mf, 0.0f, 1.0001f, 0.1001f" pstate="0" id="c0">
+                <prop id="sleep_pstates" value="1:3:2"/>
+                <prop id="watt_per_state" value="9:9,95.0:190.0,125.0:125.0,101.0:101.0"/>
+                <prop id="watt_off" value="9"/>
+                <prop id="wattage_per_state" value="9:9,95.0:190.0,125.0:125.0,101.0:101.0"/>
+                <prop id="wattage_off" value="9"/>
+            </host>
+            <host speed="350Mf, 0.0f, 1.0001f, 0.1001f" pstate="0" id="c1">
+                <prop id="sleep_pstates" value="1:3:2"/>
+                <prop id="watt_per_state" value="9:9,95.0:190.0,125.0:125.0,101.0:101.0"/>
+                <prop id="watt_off" value="9"/>
+                <prop id="wattage_per_state" value="9:9,95.0:190.0,125.0:125.0,101.0:101.0"/>
+                <prop id="wattage_off" value="9"/>
+            </host>
+            <host speed="100Mf,0.0f, 1.0001f, 0.1001f" pstate="0" id="c2">
+                <prop id="sleep_pstates" value="1:3:2"/>
+                <prop id="watt_per_state" value="6.3:6.3,66.5:133,87.5:87.5,70.7:70.7"/>
+                <prop id="watt_off" value="9"/>
+                <prop id="wattage_per_state" value="6.3:6.3,66.5:133,87.5:87.5,70.7:70.7"/>
+                <prop id="wattage_off" value="9"/>
+            </host>
+            <host speed="100Mf,0.0f, 1.0001f, 0.1001f" pstate="0" id="c3">
+                <prop id="sleep_pstates" value="1:3:2"/>
+                <prop id="watt_per_state" value="6.3:6.3,66.5:133,87.5:87.5,70.7:70.7"/>
+                <prop id="watt_off" value="9"/>
+                <prop id="wattage_per_state" value="6.3:6.3,66.5:133,87.5:87.5,70.7:70.7"/>
+                <prop id="wattage_off" value="9"/>
+            </host>
+            <host speed="100Mf,0.0f, 1.0001f, 0.1001f" pstate="0" id="c4">
+                <prop id="sleep_pstates" value="1:3:2"/>
+                <prop id="watt_per_state" value="6.3:6.3,66.5:133,87.5:87.5,70.7:70.7"/>
+                <prop id="watt_off" value="9"/>
+                <prop id="wattage_per_state" value="6.3:6.3,66.5:133,87.5:87.5,70.7:70.7"/>
+                <prop id="wattage_off" value="9"/>
+            </host>
+            <host speed="100Mf,0.0f, 1.0001f, 0.1001f" pstate="0" id="c5">
+                <prop id="sleep_pstates" value="1:3:2"/>
+                <prop id="watt_per_state" value="6.3:6.3,66.5:133,87.5:87.5,70.7:70.7"/>
+                <prop id="watt_off" value="9"/>
+                <prop id="wattage_per_state" value="6.3:6.3,66.5:133,87.5:87.5,70.7:70.7"/>
+                <prop id="wattage_off" value="9"/>
+            </host>
+            <host speed="70Mf, 0.0f, 1.0001f, 0.1001f" pstate="0" id="c6">
+                <prop id="sleep_pstates" value="1:3:2"/>
+                <prop id="watt_per_state" value="3:3,28.5:57,37.5:37.5,30.3:30.3"/>
+                <prop id="watt_off" value="9"/>
+                <prop id="wattage_per_state" value="3:3,28.5:57,37.5:37.5,30.3:30.3"/>
+                <prop id="wattage_off" value="9"/>
+            </host>
+            <host speed="70Mf, 0.0f, 1.0001f, 0.1001f" pstate="0" id="c7">
+                <prop id="sleep_pstates" value="1:3:2"/>
+                <prop id="watt_per_state" value="3:3,28.5:57,37.5:37.5,30.3:30.3"/>
+                <prop id="watt_off" value="9"/>
+                <prop id="wattage_per_state" value="3:3,28.5:57,37.5:37.5,30.3:30.3"/>
+                <prop id="wattage_off" value="9"/>
+            </host>
+            <host speed="70Mf, 0.0f, 1.0001f, 0.1001f" pstate="0" id="c8">
+                <prop id="sleep_pstates" value="1:3:2"/>
+                <prop id="watt_per_state" value="3:3,28.5:57,37.5:37.5,30.3:30.3"/>
+                <prop id="watt_off" value="9"/>
+                <prop id="wattage_per_state" value="3:3,28.5:57,37.5:37.5,30.3:30.3"/>
+                <prop id="wattage_off" value="9"/>
+            </host>
+            <host speed="70Mf, 0.0f, 1.0001f, 0.1001f" pstate="0" id="c9">
+                <prop id="sleep_pstates" value="1:3:2"/>
+                <prop id="watt_per_state" value="3:3,28.5:57,37.5:37.5,30.3:30.3"/>
+                <prop id="watt_off" value="9"/>
+                <prop id="wattage_per_state" value="3:3,28.5:57,37.5:37.5,30.3:30.3"/>
+                <prop id="wattage_off" value="9"/>
+            </host>
+            <host speed="70Mf, 0.0f, 1.0001f, 0.1001f" pstate="0" id="c10">
+                <prop id="sleep_pstates" value="1:3:2"/>
+                <prop id="watt_per_state" value="3:3,28.5:57,37.5:37.5,30.3:30.3"/>
+                <prop id="watt_off" value="9"/>
+                <prop id="wattage_per_state" value="3:3,28.5:57,37.5:37.5,30.3:30.3"/>
+                <prop id="wattage_off" value="9"/>
+            </host>
+            <host speed="70Mf, 0.0f, 1.0001f, 0.1001f" pstate="0" id="c11">
+                <prop id="sleep_pstates" value="1:3:2"/>
+                <prop id="watt_per_state" value="3:3,28.5:57,37.5:37.5,30.3:30.3"/>
+                <prop id="watt_off" value="9"/>
+                <prop id="wattage_per_state" value="3:3,28.5:57,37.5:37.5,30.3:30.3"/>
+                <prop id="wattage_off" value="9"/>
+            </host>
+            <host speed="70Mf, 0.0f, 1.0001f, 0.1001f" pstate="0" id="c12">
+                <prop id="sleep_pstates" value="1:3:2"/>
+                <prop id="watt_per_state" value="3:3,28.5:57,37.5:37.5,30.3:30.3"/>
+                <prop id="watt_off" value="9"/>
+                <prop id="wattage_per_state" value="3:3,28.5:57,37.5:37.5,30.3:30.3"/>
+                <prop id="wattage_off" value="9"/>
+            </host>
+            <host speed="70Mf, 0.0f, 1.0001f, 0.1001f" pstate="0" id="c13">
+                <prop id="sleep_pstates" value="1:3:2"/>
+                <prop id="watt_per_state" value="3:3,28.5:57,37.5:37.5,30.3:30.3"/>
+                <prop id="watt_off" value="9"/>
+                <prop id="wattage_per_state" value="3:3,28.5:57,37.5:37.5,30.3:30.3"/>
+                <prop id="wattage_off" value="9"/>
+            </host>
+            <host speed="70Mf, 0.0f, 1.0001f, 0.1001f" pstate="0" id="c14">
+                <prop id="sleep_pstates" value="1:3:2"/>
+                <prop id="watt_per_state" value="3:3,28.5:57,37.5:37.5,30.3:30.3"/>
+                <prop id="watt_off" value="9"/>
+                <prop id="wattage_per_state" value="3:3,28.5:57,37.5:37.5,30.3:30.3"/>
+                <prop id="wattage_off" value="9"/>
+            </host>
+            <host speed="70Mf, 0.0f, 1.0001f, 0.1001f" pstate="0" id="c15">
+                <prop id="sleep_pstates" value="1:3:2"/>
+                <prop id="watt_per_state" value="3:3,28.5:57,37.5:37.5,30.3:30.3"/>
+                <prop id="watt_off" value="9"/>
+                <prop id="wattage_per_state" value="3:3,28.5:57,37.5:37.5,30.3:30.3"/>
+                <prop id="wattage_off" value="9"/>
+            </host>
+            <router id="r10"/>
+            <router id="r11"/>
+            <router id="r12"/>
+            <router id="r13"/>
+            <router id="r20"/>
+            <router id="r21"/>
+            <router id="router_master"/>
+            <link bandwidth="1.25GBps" latency="500us" id="r21-r10-uplink0"/>
+            <link bandwidth="1.25GBps" latency="500us" id="r21-r10-uplink1"/>
+            <link bandwidth="1.25GBps" latency="500us" id="r21-r10-downlink0"/>
+            <link bandwidth="1.25GBps" latency="500us" id="r21-r10-downlink1"/>
+            <link bandwidth="1.25GBps" latency="500us" id="r10-c0-uplink0"/>
+            <link bandwidth="1.25GBps" latency="500us" id="r10-c0-downlink0"/>
+            <link bandwidth="1.25GBps" latency="500us" id="r20-r12-uplink0"/>
+            <link bandwidth="1.25GBps" latency="500us" id="r20-r12-uplink1"/>
+            <link bandwidth="1.25GBps" latency="500us" id="r20-r12-downlink0"/>
+            <link bandwidth="1.25GBps" latency="500us" id="r20-r12-downlink1"/>
+            <link bandwidth="1.25GBps" latency="500us" id="router_master-r21-uplink0"/>
+            <link bandwidth="1.25GBps" latency="500us" id="router_master-r21-downlink0"/>
+            <link bandwidth="1.25GBps" latency="500us" id="r10-c1-uplink0"/>
+            <link bandwidth="1.25GBps" latency="500us" id="r10-c1-downlink0"/>
+            <link bandwidth="1.25GBps" latency="500us" id="r13-c12-uplink0"/>
+            <link bandwidth="1.25GBps" latency="500us" id="r13-c12-downlink0"/>
+            <link bandwidth="1.25GBps" latency="500us" id="r13-c15-uplink0"/>
+            <link bandwidth="1.25GBps" latency="500us" id="r13-c15-downlink0"/>
+            <link bandwidth="1.25GBps" latency="500us" id="r11-c5-uplink0"/>
+            <link bandwidth="1.25GBps" latency="500us" id="r11-c5-downlink0"/>
+            <link bandwidth="1.25GBps" latency="500us" id="router_master-r20-uplink0"/>
+            <link bandwidth="1.25GBps" latency="500us" id="router_master-r20-downlink0"/>
+            <link bandwidth="1.25GBps" latency="500us" id="r11-c7-uplink0"/>
+            <link bandwidth="1.25GBps" latency="500us" id="r11-c7-downlink0"/>
+            <link bandwidth="1.25GBps" latency="500us" id="r11-c4-uplink0"/>
+            <link bandwidth="1.25GBps" latency="500us" id="r11-c4-downlink0"/>
+            <link bandwidth="1.25GBps" latency="500us" id="r13-c14-uplink0"/>
+            <link bandwidth="1.25GBps" latency="500us" id="r13-c14-downlink0"/>
+            <link bandwidth="1.25GBps" latency="500us" id="r12-c9-uplink0"/>
+            <link bandwidth="1.25GBps" latency="500us" id="r12-c9-downlink0"/>
+            <link bandwidth="1.25GBps" latency="500us" id="r20-r13-uplink0"/>
+            <link bandwidth="1.25GBps" latency="500us" id="r20-r13-uplink1"/>
+            <link bandwidth="1.25GBps" latency="500us" id="r20-r13-downlink0"/>
+            <link bandwidth="1.25GBps" latency="500us" id="r20-r13-downlink1"/>
+            <link bandwidth="1.25GBps" latency="500us" id="r12-c8-uplink0"/>
+            <link bandwidth="1.25GBps" latency="500us" id="r12-c8-downlink0"/>
+            <link bandwidth="1.25GBps" latency="500us" id="r13-c13-uplink0"/>
+            <link bandwidth="1.25GBps" latency="500us" id="r13-c13-downlink0"/>
+            <link bandwidth="1.25GBps" latency="500us" id="r12-c10-uplink0"/>
+            <link bandwidth="1.25GBps" latency="500us" id="r12-c10-downlink0"/>
+            <link bandwidth="1.25GBps" latency="500us" id="r21-r13-uplink0"/>
+            <link bandwidth="1.25GBps" latency="500us" id="r21-r13-uplink1"/>
+            <link bandwidth="1.25GBps" latency="500us" id="r21-r13-downlink0"/>
+            <link bandwidth="1.25GBps" latency="500us" id="r21-r13-downlink1"/>
+            <link bandwidth="1.25GBps" latency="500us" id="r20-r10-uplink0"/>
+            <link bandwidth="1.25GBps" latency="500us" id="r20-r10-uplink1"/>
+            <link bandwidth="1.25GBps" latency="500us" id="r20-r10-downlink0"/>
+            <link bandwidth="1.25GBps" latency="500us" id="r20-r10-downlink1"/>
+            <link bandwidth="1.25GBps" latency="500us" id="r21-r11-uplink0"/>
+            <link bandwidth="1.25GBps" latency="500us" id="r21-r11-uplink1"/>
+            <link bandwidth="1.25GBps" latency="500us" id="r21-r11-downlink0"/>
+            <link bandwidth="1.25GBps" latency="500us" id="r21-r11-downlink1"/>
+            <link bandwidth="1.25GBps" latency="500us" id="r12-c11-uplink0"/>
+            <link bandwidth="1.25GBps" latency="500us" id="r12-c11-downlink0"/>
+            <link bandwidth="1.25GBps" latency="500us" id="r21-r12-uplink0"/>
+            <link bandwidth="1.25GBps" latency="500us" id="r21-r12-uplink1"/>
+            <link bandwidth="1.25GBps" latency="500us" id="r21-r12-downlink0"/>
+            <link bandwidth="1.25GBps" latency="500us" id="r21-r12-downlink1"/>
+            <link bandwidth="1.25GBps" latency="500us" id="r10-c3-uplink0"/>
+            <link bandwidth="1.25GBps" latency="500us" id="r10-c3-downlink0"/>
+            <link bandwidth="1.25GBps" latency="500us" id="r10-c2-uplink0"/>
+            <link bandwidth="1.25GBps" latency="500us" id="r10-c2-downlink0"/>
+            <link bandwidth="1.25GBps" latency="500us" id="r20-r11-uplink0"/>
+            <link bandwidth="1.25GBps" latency="500us" id="r20-r11-uplink1"/>
+            <link bandwidth="1.25GBps" latency="500us" id="r20-r11-downlink0"/>
+            <link bandwidth="1.25GBps" latency="500us" id="r20-r11-downlink1"/>
+            <link bandwidth="1.25GBps" latency="500us" id="r11-c6-uplink0"/>
+            <link bandwidth="1.25GBps" latency="500us" id="r11-c6-downlink0"/>
+            <route src="r21" dst="r10">
+                <link_ctn id="r21-r10-uplink0"/>
+                <link_ctn id="r21-r10-uplink1"/>
+                <link_ctn id="r21-r10-downlink0"/>
+                <link_ctn id="r21-r10-downlink1"/>
+            </route>
+            <route src="r10" dst="c0">
+                <link_ctn id="r10-c0-uplink0"/>
+                <link_ctn id="r10-c0-downlink0"/>
+            </route>
+            <route src="r20" dst="r12">
+                <link_ctn id="r20-r12-uplink0"/>
+                <link_ctn id="r20-r12-uplink1"/>
+                <link_ctn id="r20-r12-downlink0"/>
+                <link_ctn id="r20-r12-downlink1"/>
+            </route>
+            <route src="router_master" dst="r21">
+                <link_ctn id="router_master-r21-uplink0"/>
+                <link_ctn id="router_master-r21-downlink0"/>
+            </route>
+            <route src="r10" dst="c1">
+                <link_ctn id="r10-c1-uplink0"/>
+                <link_ctn id="r10-c1-downlink0"/>
+            </route>
+            <route src="r13" dst="c12">
+                <link_ctn id="r13-c12-uplink0"/>
+                <link_ctn id="r13-c12-downlink0"/>
+            </route>
+            <route src="r13" dst="c15">
+                <link_ctn id="r13-c15-uplink0"/>
+                <link_ctn id="r13-c15-downlink0"/>
+            </route>
+            <route src="r11" dst="c5">
+                <link_ctn id="r11-c5-uplink0"/>
+                <link_ctn id="r11-c5-downlink0"/>
+            </route>
+            <route src="router_master" dst="r20">
+                <link_ctn id="router_master-r20-uplink0"/>
+                <link_ctn id="router_master-r20-downlink0"/>
+            </route>
+            <route src="r11" dst="c7">
+                <link_ctn id="r11-c7-uplink0"/>
+                <link_ctn id="r11-c7-downlink0"/>
+            </route>
+            <route src="r11" dst="c4">
+                <link_ctn id="r11-c4-uplink0"/>
+                <link_ctn id="r11-c4-downlink0"/>
+            </route>
+            <route src="r13" dst="c14">
+                <link_ctn id="r13-c14-uplink0"/>
+                <link_ctn id="r13-c14-downlink0"/>
+            </route>
+            <route src="r12" dst="c9">
+                <link_ctn id="r12-c9-uplink0"/>
+                <link_ctn id="r12-c9-downlink0"/>
+            </route>
+            <route src="r20" dst="r13">
+                <link_ctn id="r20-r13-uplink0"/>
+                <link_ctn id="r20-r13-uplink1"/>
+                <link_ctn id="r20-r13-downlink0"/>
+                <link_ctn id="r20-r13-downlink1"/>
+            </route>
+            <route src="r12" dst="c8">
+                <link_ctn id="r12-c8-uplink0"/>
+                <link_ctn id="r12-c8-downlink0"/>
+            </route>
+            <route src="r13" dst="c13">
+                <link_ctn id="r13-c13-uplink0"/>
+                <link_ctn id="r13-c13-downlink0"/>
+            </route>
+            <route src="r12" dst="c10">
+                <link_ctn id="r12-c10-uplink0"/>
+                <link_ctn id="r12-c10-downlink0"/>
+            </route>
+            <route src="r21" dst="r13">
+                <link_ctn id="r21-r13-uplink0"/>
+                <link_ctn id="r21-r13-uplink1"/>
+                <link_ctn id="r21-r13-downlink0"/>
+                <link_ctn id="r21-r13-downlink1"/>
+            </route>
+            <route src="r20" dst="r10">
+                <link_ctn id="r20-r10-uplink0"/>
+                <link_ctn id="r20-r10-uplink1"/>
+                <link_ctn id="r20-r10-downlink0"/>
+                <link_ctn id="r20-r10-downlink1"/>
+            </route>
+            <route src="r21" dst="r11">
+                <link_ctn id="r21-r11-uplink0"/>
+                <link_ctn id="r21-r11-uplink1"/>
+                <link_ctn id="r21-r11-downlink0"/>
+                <link_ctn id="r21-r11-downlink1"/>
+            </route>
+            <route src="r12" dst="c11">
+                <link_ctn id="r12-c11-uplink0"/>
+                <link_ctn id="r12-c11-downlink0"/>
+            </route>
+            <route src="r21" dst="r12">
+                <link_ctn id="r21-r12-uplink0"/>
+                <link_ctn id="r21-r12-uplink1"/>
+                <link_ctn id="r21-r12-downlink0"/>
+                <link_ctn id="r21-r12-downlink1"/>
+            </route>
+            <route src="r10" dst="c3">
+                <link_ctn id="r10-c3-uplink0"/>
+                <link_ctn id="r10-c3-downlink0"/>
+            </route>
+            <route src="r10" dst="c2">
+                <link_ctn id="r10-c2-uplink0"/>
+                <link_ctn id="r10-c2-downlink0"/>
+            </route>
+            <route src="r20" dst="r11">
+                <link_ctn id="r20-r11-uplink0"/>
+                <link_ctn id="r20-r11-uplink1"/>
+                <link_ctn id="r20-r11-downlink0"/>
+                <link_ctn id="r20-r11-downlink1"/>
+            </route>
+            <route src="r11" dst="c6">
+                <link_ctn id="r11-c6-uplink0"/>
+                <link_ctn id="r11-c6-downlink0"/>
+            </route>
+        </zone>
+        <cluster id="cluster_master" prefix="master_host" suffix="" radical="0-0" speed="100.0Mf" bw="125MBps" lat="50us" bb_bw="2.25GBps" bb_lat="500us">
+            <prop id="role" value="master"/>
+        </cluster>
+        <link id="backbone" bandwidth="1.25GBps" latency="500us"/>
+        <zoneRoute src="cluster_compute" dst="cluster_master" gw_src="router_master" gw_dst="master_hostcluster_master_router">
+            <link_ctn id="backbone"/>
+        </zoneRoute>
+    </zone>
+</platform>

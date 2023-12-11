@@ -1,0 +1,1 @@
+python -m pybatsim --options-file configs/easy-backfill-sa-opt.json schedulers/AllocOnly_sched.py

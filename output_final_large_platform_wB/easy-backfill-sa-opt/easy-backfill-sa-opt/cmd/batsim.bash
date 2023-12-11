@@ -1,0 +1,1 @@
+batsim -p platforms/large_platform.xml -w workloads/caso_variado_B.json -e output_final_large_platform_wB/easy-backfill-sa-opt/easy-backfill-sa-opt
